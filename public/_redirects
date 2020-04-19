@@ -1,4 +1,5 @@
 # These rules will change if you change your site’s custom domains or HTTPS settings
+/*    /index.html   200
 
 # Optional: Redirect default Netlify subdomain to primary domain
 https://streamgato.netlify.com/* https://streamgato.lukem.net/:splat 301!
