@@ -1,18 +1,22 @@
 [
   {
     "name": "Countdown Timer",
-    "route": "/countdowntimer"
+    "route": "/countdowntimer",
+    "shorthand": "cd"
   },
   {
     "name": "Stream Timer",
-    "route": "/streamtimer"
+    "route": "/streamtimer",
+    "shorthand": "st"
   },
   {
     "name": "Social media widget",
-    "route": "/socialmediawidget"
+    "route": "/socialmediawidget",
+    "shorthand": "sm"
   },
   {
     "name": "Last.fm Recent Song",
-    "route": "/lastfmrecentsong"
+    "route": "/lastfmrecentsong",
+    "shorthand": "lr"
   }
 ]
