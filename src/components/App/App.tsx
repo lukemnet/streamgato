@@ -7,7 +7,12 @@ import {
 
 import WidgetPage from 'components/WidgetPage/WidgetPage';
 import IndexPage from 'components/IndexPage/IndexPage';
-import widgets from 'config/widgets';
+import widgets from 'config/widgets.json';
+
+export interface WidgetConfig {
+  name: string;
+  route: string;
+}
 
 const App = () => (
   <Router>

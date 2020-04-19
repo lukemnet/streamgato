@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import GenericPage from 'components/GenericPage/GenericPage';
-import { WidgetConfig } from 'config/widgets';
+import { WidgetConfig } from 'components/App/App';
 
 interface IndexPageProps {
   widgets: WidgetConfig[];

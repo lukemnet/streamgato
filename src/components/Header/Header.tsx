@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import widgets from 'config/widgets';
+import widgets from 'config/widgets.json';
 
 const cx = classnames;
 

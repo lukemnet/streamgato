@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { Container, Row, Col } from 'react-bootstrap';
 import GenericPage from 'components/GenericPage/GenericPage';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
-import { WidgetConfig } from 'config/widgets';
+import { WidgetConfig } from 'components/App/App';
 
 interface WidgetPageProps {
   className?: string;
