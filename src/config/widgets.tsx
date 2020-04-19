@@ -1,9 +1,6 @@
-import { ReactElement } from 'react';
-
 export interface WidgetConfig {
   name: string;
   route: string;
-  pageComponent: ReactElement;
 }
 
 const widgets = [
