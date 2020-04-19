@@ -19,8 +19,8 @@ const IndexPage = ({ widgets }: IndexPageProps) => (
       <Row>
         <Col>
           <ul>
-          {widgets.map(widget => (
-            <li>
+          {widgets.map((widget, key) => (
+            <li key={key}>
               <Link to={widget.route}>
                 {widget.name}
               </Link>

@@ -16,7 +16,10 @@ const WidgetPage = ({
   className,
   widget,
 }: WidgetPageProps) => (
-  <GenericPage className={cx(className)}>
+  <GenericPage
+    className={cx(className)}
+    title={widget.name}
+  >
     <Container>
       <Row>
         <Col>
