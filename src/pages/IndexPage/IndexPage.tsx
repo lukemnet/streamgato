@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GenericPage from 'components/GenericPage/GenericPage';
 
 const IndexPage = () => (
-  <div className="IndexPage">
+  <GenericPage className="IndexPage">
     <h1>IndexPage</h1>
     <ul>
       <li>
@@ -26,7 +27,7 @@ const IndexPage = () => (
         </Link>
       </li>
     </ul>
-  </div>
+  </GenericPage>
 );
 
 export default IndexPage;

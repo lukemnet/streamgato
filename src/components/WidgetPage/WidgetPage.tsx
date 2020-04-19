@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
+import GenericPage from 'components/GenericPage/GenericPage';
 
 interface WidgetPageProps {
   className: string;
@@ -13,12 +14,12 @@ const WidgetPage = ({
   className,
   name,
 }: WidgetPageProps) => (
-  <div className={cx('WidgetPage', className)}>
+  <GenericPage className={cx('WidgetPage', className)}>
     <h1>{name}</h1>
     <Link to="/">
       &larr; Back to main page
     </Link>
-  </div>
+  </GenericPage>
 );
 
 export default WidgetPage;
