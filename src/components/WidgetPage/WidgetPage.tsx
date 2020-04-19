@@ -18,12 +18,12 @@ const WidgetPage = ({
 }: WidgetPageProps) => (
   <GenericPage className={cx(className)}>
     <Container>
-      <Col>
-        <Row>
+      <Row>
+        <Col>
           <h1>{widget.name}</h1>
           <BackToIndexLink />
-        </Row>
-      </Col>
+        </Col>
+      </Row>
     </Container>
   </GenericPage>
 );
