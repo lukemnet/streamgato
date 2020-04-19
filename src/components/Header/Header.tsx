@@ -2,8 +2,10 @@ import React from 'react';
 import classnames from 'classnames';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import widgets from 'config/widgets';
 
 const cx = classnames;
+
 
 const Header = () => (
   <div className={cx('Header')}>
@@ -13,10 +15,14 @@ const Header = () => (
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <NavDropdown title="Widgets" id="basic-nav-dropdown">
-            <NavLink to="/countdowntimer" className="dropdown-item">Countdown Timer</NavLink>
-            <NavLink to="/streamtimer" className="dropdown-item">Stream Timer</NavLink>
-            <NavLink to="/socialmediawidget" className="dropdown-item">Social Media Widget</NavLink>
-            <NavLink to="/lastfmrecentsong" className="dropdown-item">Last.fm Recent Song</NavLink>
+          {widgets.map(widget => (
+            <NavLink
+              to={widget.route}
+              className="dropdown-item"
+            >
+              {widget.name}
+            </NavLink>
+          ))}
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

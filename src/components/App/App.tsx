@@ -2,31 +2,23 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from 'react-router-dom';
-import IndexPage from 'pages/IndexPage/IndexPage';
-import CountdownTimerPage from 'pages/CountdownTimerPage/CountdownTimerPage';
-import StreamTimerPage from 'pages/StreamTimerPage/StreamTimerPage';
-import LastfmRecentSongPage from 'pages/LastfmRecentSongPage/LastfmRecentSongPage';
-import SocialMediaWidgetPage from 'pages/SocialMediaWidgetPage/SocialMediaWidgetPage';
+
+import WidgetPage from 'components/WidgetPage/WidgetPage';
+import IndexPage from 'components/IndexPage/IndexPage';
+import widgets from 'config/widgets';
 
 const App = () => (
   <Router>
     <Switch>
-      <Route path="/countdowntimer">
-        <CountdownTimerPage />
-      </Route>
-      <Route path="/streamtimer">
-        <StreamTimerPage />
-      </Route>
-      <Route path="/socialmediawidget">
-        <SocialMediaWidgetPage />
-      </Route>
-      <Route path="/lastfmrecentsong">
-        <LastfmRecentSongPage />
-      </Route>
+      {widgets.map((widget, key) => (
+        <Route key={key} path={widget.route}>
+          <WidgetPage widget={widget} />
+        </Route>
+      ))}
       <Route path="/">
-        <IndexPage />
+        <IndexPage widgets={widgets} />
       </Route>
     </Switch>
   </Router>

@@ -3,23 +3,24 @@ import classnames from 'classnames';
 import { Container, Row, Col } from 'react-bootstrap';
 import GenericPage from 'components/GenericPage/GenericPage';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
+import { WidgetConfig } from 'config/widgets';
 
 interface WidgetPageProps {
   className?: string;
-  name: string;
+  widget: WidgetConfig;
 }
 
 const cx = classnames;
 
 const WidgetPage = ({
   className,
-  name,
+  widget,
 }: WidgetPageProps) => (
   <GenericPage className={cx(className)}>
     <Container>
       <Col>
         <Row>
-          <h1>{name}</h1>
+          <h1>{widget.name}</h1>
           <BackToIndexLink />
         </Row>
       </Col>
