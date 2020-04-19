@@ -12,6 +12,7 @@ import widgets from 'config/widgets.json';
 export interface WidgetConfig {
   name: string;
   route: string;
+  settings: any;
 }
 
 const App = () => (

@@ -2,21 +2,53 @@
   {
     "name": "Countdown Timer",
     "route": "/countdowntimer",
-    "shorthand": "cd"
+    "shorthand": "cd",
+    "settings": {
+      "startValue": {
+        "type": "number"
+      },
+      "font": {
+        "type": "string"
+      }
+    }
   },
   {
     "name": "Stream Timer",
     "route": "/streamtimer",
-    "shorthand": "st"
+    "shorthand": "st",
+    "settings": {
+      "startValue": {
+        "type": "number"
+      },
+      "font": {
+        "type": "string"
+      }
+    }
   },
   {
-    "name": "Social media widget",
+    "name": "Social Media Widget",
     "route": "/socialmediawidget",
-    "shorthand": "sm"
+    "shorthand": "sm",
+    "settings": {
+      "startValue": {
+        "type": "number"
+      },
+      "font": {
+        "type": "string"
+      }
+    }
   },
   {
     "name": "Last.fm Recent Song",
     "route": "/lastfmrecentsong",
-    "shorthand": "lr"
+    "shorthand": "lr",
+    "settings": {
+      "startValue": {
+        "type": "number"
+      },
+      "font": {
+        "type": "string"
+      }
+    }
   }
 ]
