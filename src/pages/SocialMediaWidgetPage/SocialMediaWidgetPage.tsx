@@ -1,8 +1,8 @@
 import React from 'react';
-import WidgetSetupPage from 'components/WidgetSetupPage/WidgetSetupPage';
+import WidgetPage from 'components/WidgetPage/WidgetPage';
 
 const SocialMediaWidgetPage = () => (
-    <WidgetSetupPage
+    <WidgetPage
       className="SocialMediaWidgetPage"
       name="Social Media Widget"
     />

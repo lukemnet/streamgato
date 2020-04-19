@@ -1,8 +1,8 @@
 import React from 'react';
-import WidgetSetupPage from 'components/WidgetSetupPage/WidgetSetupPage';
+import WidgetPage from 'components/WidgetPage/WidgetPage';
 
 const LastfmRecentSongPage = () => (
-    <WidgetSetupPage
+    <WidgetPage
       className="LastfmRecentSongPage"
       name="Last.fm Recent Song"
     />

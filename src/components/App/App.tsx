@@ -9,6 +9,7 @@ import CountdownTimerPage from 'pages/CountdownTimerPage/CountdownTimerPage';
 import StreamTimerPage from 'pages/StreamTimerPage/StreamTimerPage';
 import LastfmRecentSongPage from 'pages/LastfmRecentSongPage/LastfmRecentSongPage';
 import SocialMediaWidgetPage from 'pages/SocialMediaWidgetPage/SocialMediaWidgetPage';
+import './App.scss';
 
 const App = () => (
   <Router>
