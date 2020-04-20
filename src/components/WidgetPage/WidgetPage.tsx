@@ -27,7 +27,7 @@ const WidgetPage = ({
           <Col>
             <h1>{widget.name}</h1>
             <ConfigForm settings={widget.settings} />
-            <div>
+            <div style={{ overflow: "hidden"}}>
               {JSON.stringify(widget)}
             </div>
             <BackToIndexLink />
