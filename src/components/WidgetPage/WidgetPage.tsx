@@ -1,38 +1,40 @@
 import React from 'react';
-import classnames from 'classnames';
+import cx from 'classnames';
 import { Container, Row, Col } from 'react-bootstrap';
-import GenericPage from 'components/GenericPage/GenericPage';
+import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigForm from 'components/ConfigForm/ConfigForm';
-import { WidgetConfig } from 'components/App/App';
 
 interface WidgetPageProps {
   className?: string;
-  widget: WidgetConfig;
+  widget: {
+    name: string;
+    settings: unknown;
+  };
 }
-
-const cx = classnames;
 
 const WidgetPage = ({
   className,
   widget,
 }: WidgetPageProps) => {
-  const { name, settings } = widget;
   return (
-    <GenericPage
+    <Page
       className={cx(className)}
       title={widget.name}
     >
       <Container>
         <Row>
           <Col>
-            <h1>{name}</h1>
-            <ConfigForm settings={settings} />
+            <h1>{widget.name}</h1>
+            <ConfigForm settings={widget.settings} />
+            <div>
+              {JSON.stringify(widget)}
+            </div>
             <BackToIndexLink />
           </Col>
         </Row>
       </Container>
-    </GenericPage>
+    </Page>
   );
 }
 

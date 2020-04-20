@@ -1,7 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
-
-const cx = classnames;
+import cx from 'classnames';
 
 const Footer = () => (
   <div className={cx('Footer')}>

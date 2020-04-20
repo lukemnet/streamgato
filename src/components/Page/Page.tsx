@@ -2,9 +2,10 @@ import React, { ReactElement, useEffect } from 'react';
 import classnames from 'classnames/bind';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
+import config from 'config/config';
+
 import './bootstrap.scss';
-import styles from './GenericPage.module.scss';
-import metadata from 'config/metadata.json';
+import styles from './Page.module.scss';
 
 interface GenericPageProps {
   className?: string;
@@ -14,11 +15,13 @@ interface GenericPageProps {
 
 const cx = classnames.bind(styles);
 
-const GenericPage = ({
+const Page = ({
   className,
   title,
   children
 }: GenericPageProps) => {
+  const { metadata } = config;
+
   useEffect(() => {
     document.title = title
       ? `${title} | ${metadata.title}`
@@ -26,7 +29,7 @@ const GenericPage = ({
   });
 
   return (
-    <div className={cx('GenericPage', className)}>
+    <div className={cx('Page', className)}>
       <Header />
       <main id="content">
         {children}
@@ -38,4 +41,4 @@ const GenericPage = ({
   );
 }
 
-export default GenericPage;
+export default Page;

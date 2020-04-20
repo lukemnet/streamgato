@@ -1,17 +1,36 @@
 import React from 'react';
-import classnames from 'classnames';
+import { Formik, Form, Field } from 'formik';
+import cx from 'classnames';
 
 interface ConfigFormProps {
   settings: any;
 }
 
-const cx = classnames;
-
 const ConfigForm = ({
   settings,
 }: ConfigFormProps) => (
   <div className={cx('ConfigForm')}>
-    {JSON.stringify(settings)}
+    {/* {JSON.stringify(settings)} */}
+    <Formik
+      initialValues={{
+        social: {
+          facebook: '',
+          twitter: '',
+        },
+      }}
+      onSubmit={values => {
+        // same shape as initial values
+        console.log(values);
+      }}
+    >
+      <Form>
+        <Field name="background-color" />
+        <Field name="font-family" />
+        <Field name="font-size" />
+                
+        <button type="submit">Submit</button>
+      </Form>
+    </Formik>
   </div>
 );
 

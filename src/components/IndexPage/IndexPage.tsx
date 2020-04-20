@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import GenericPage from 'components/GenericPage/GenericPage';
-import { WidgetConfig } from 'components/App/App';
+import Page from 'components/Page/Page';
 
 interface IndexPageProps {
-  widgets: WidgetConfig[];
+  widgets: {
+    route: string;
+    name: string;
+  }[];
 }
 
 const IndexPage = ({ widgets }: IndexPageProps) => (
-  <GenericPage>
+  <Page>
     <Container>
       <Row>
         <Col>
@@ -30,7 +32,7 @@ const IndexPage = ({ widgets }: IndexPageProps) => (
         </Col>
       </Row>
     </Container>
-  </GenericPage>
+  </Page>
 );
 
 export default IndexPage;

@@ -1,16 +1,14 @@
 import React from 'react';
-import classnames from 'classnames';
+import cx from 'classnames';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import widgets from 'config/widgets.json';
-import metadata from 'config/metadata.json';
-
-const cx = classnames;
+import config from 'config/config';
 
 const Header = () => (
   <div className={cx('Header')}>
     <Navbar bg="dark" variant="dark">
-      <NavLink to="/" className="navbar-brand">{metadata.title}</NavLink>
+      <NavLink to="/" className="navbar-brand">{config.metadata.title}</NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
