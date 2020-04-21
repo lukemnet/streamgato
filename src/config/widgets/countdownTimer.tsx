@@ -1,6 +1,6 @@
 const countdownTimer = {
   name: "Countdown Timer",
-  
+
   route: "/countdowntimer",
   alias: "cd",
   settings: {
@@ -65,7 +65,7 @@ const countdownTimer = {
       label: "Right padding",
     },
   },
-  initialSettings: {
+  initialValues: {
     hours: 1,
     minutes: 5,
     seconds: 30,

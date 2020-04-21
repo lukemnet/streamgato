@@ -26,7 +26,7 @@ const Page = ({
     document.title = title
       ? `${title} | ${metadata.title}`
       : metadata.title;
-  });
+  }, [title, metadata.title]);
 
   return (
     <div className={cx('Page', className)}>

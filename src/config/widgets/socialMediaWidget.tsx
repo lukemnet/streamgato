@@ -10,7 +10,7 @@ const socialMediaWidget = {
       type: "string",
     },
   },
-  initialSettings: {
+  initialValues: {
     startValue: 5,
     fontFamily: "Arial",
     fontSize: "40px",

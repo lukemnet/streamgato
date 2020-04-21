@@ -1,17 +1,25 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+// import { Formik, Form, Field } from 'formik';
 import cx from 'classnames';
 
 interface ConfigFormProps {
   settings: any;
+  initialValues: any;
 }
 
 const ConfigForm = ({
   settings,
+  initialValues,
 }: ConfigFormProps) => (
   <div className={cx('ConfigForm')}>
-    {/* {JSON.stringify(settings)} */}
-    <Formik
+    <h2>Form</h2>
+    <div style={{ overflow: "hidden" }}>
+      {JSON.stringify(settings)}
+    </div>
+    <div style={{ overflow: "hidden" }}>
+      {JSON.stringify(initialValues)}
+    </div>
+    {/* <Formik
       initialValues={{
         social: {
           facebook: '',
@@ -30,7 +38,7 @@ const ConfigForm = ({
                 
         <button type="submit">Submit</button>
       </Form>
-    </Formik>
+    </Formik> */}
   </div>
 );
 
