@@ -78,7 +78,7 @@ const countdownTimer = {
       label: "Right padding",
       shorthand: "pr",
     },
-    customCss: {
+    customCSS: {
       type: "string",
       label: "Custom stylesheet URL",
       shorthand: "cs",
@@ -102,6 +102,7 @@ const countdownTimer = {
     paddingBottom: 5,
     paddingLeft: 5,
     paddingRight: 5,
+    customCSS: "",
   },
 };
 
