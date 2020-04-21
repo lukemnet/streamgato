@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Row, Col, Nav, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import config from 'config/config';
 
@@ -10,28 +10,38 @@ const Header = () => {
   return (
     <div className={cx('Header')}>
       <Navbar bg="dark" variant="dark">
-        <NavLink to="/" className="navbar-brand">
-          {metadata.title}
-        </NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <NavDropdown
-              title="Widgets"
-              id="basic-nav-dropdown"
-            >
-              {widgets.map((widget, key) => (
-                <NavLink
-                  to={widget.route}
-                  className="dropdown-item"
-                  key={key}
-                >
-                  {widget.name}
-                </NavLink>
-              ))}
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+        <Container>
+          <Row>
+            <Col sm={6}>
+              <NavLink to="/" className="navbar-brand">
+                <span role="img" aria-label="cat">😺</span>
+                &nbsp;
+                {metadata.title}
+              </NavLink>
+            </Col>
+            <Col sm={6}>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <NavDropdown
+                    title="Widgets"
+                    id="basic-nav-dropdown"
+                  >
+                    {widgets.map((widget, key) => (
+                      <NavLink
+                        to={widget.route}
+                        className="dropdown-item"
+                        key={key}
+                      >
+                        {widget.name}
+                      </NavLink>
+                    ))}
+                  </NavDropdown>
+                </Nav>
+              </Navbar.Collapse>
+            </Col>
+          </Row>
+        </Container>
       </Navbar>
     </div>
   );

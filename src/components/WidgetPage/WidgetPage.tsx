@@ -31,10 +31,14 @@ const WidgetPage = ({
       className={cx(className)}
       title={name}
     >
-      <Container>
+      <Container fluid="md">
         <Row>
           <Col>
             <h1>{name}</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <ConfigForm
               settings={settings}
               initialValues={initialValues} />
