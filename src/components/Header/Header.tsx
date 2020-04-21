@@ -10,16 +10,16 @@ const Header = () => {
   return (
     <div className={cx('Header')}>
       <Navbar bg="dark" variant="dark">
-        <Container>
+        <Container fluid="md">
           <Row>
-            <Col sm={6}>
+            <Col sm={12} md={6}>
               <NavLink to="/" className="navbar-brand">
                 <span role="img" aria-label="cat">😺</span>
                 &nbsp;
                 {metadata.title}
               </NavLink>
             </Col>
-            <Col sm={6}>
+            <Col sm={12} md={6}>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
