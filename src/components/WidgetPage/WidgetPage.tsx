@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import { Container, Row, Col } from 'react-bootstrap';
 import Page from 'components/Page/Page';
@@ -11,8 +11,7 @@ interface WidgetPageProps {
   className?: string;
   widget: {
     name: string;
-    settings: unknown;
-    initialValues: unknown;
+    params: unknown;
   };
 }
 
@@ -22,9 +21,10 @@ const WidgetPage = ({
 }: WidgetPageProps) => {
   const {
     name,
-    settings,
-    initialValues,
+    params,
   } = widget;
+
+  const [ settings, setSettings ] = useState(params);
 
   return (
     <Page
@@ -40,10 +40,11 @@ const WidgetPage = ({
         <Row>
           <Col>
             <ConfigForm
-              settings={settings}
-              initialValues={initialValues} />
-            <Widget params={initialValues} />
-            <WidgetUrl params={initialValues} />
+              params={settings}
+              onChange={setSettings}
+            />
+            <Widget params={settings} />
+            <WidgetUrl params={settings} />
             <BackToIndexLink />
           </Col>
         </Row>

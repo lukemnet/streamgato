@@ -2,107 +2,103 @@ const countdownTimer = {
   name: "Countdown Timer",
   route: "/countdowntimer",
   alias: "cd",
-  settings: {
+  params: {
     hours: {
       type: "number",
       label: "Hours",
       shorthand: "h",
+      value: 1,
     },
     minutes: {
       type: "number",
       label: "Minutes",
       shorthand: "m",
+      value: 5,
     },
     seconds: {
       type: "number",
       label: "Seconds",
       shorthand: "s",
+      value: 30,
     },
     background: {
       type: "string",
       label: "Background color",
       shorthand: "bg",
+      value: "#000000",
     },
     color: {
       type: "string",
       label: "Text color",
       shorthand: "col",
+      value: "#ffffff"
     },
     width: {
       type: "number",
       label: "Container width",
       shorthand: "w",
+      value: "200",
     },
     fontFamily: {
       type: "string",
       label: "Font family",
       shorthand: "ff",
+      value: "Arial",
     },
     fontSize: {
-      type: "string",
+      type: "number",
       label: "Font size",
       shorthand: "fz",
+      value: 24
     },
     fontWeight: {
       type: "string",
       label: "Font weight",
-      shorthand: "fw"
+      shorthand: "fw",
+      value: "bold",
     },
     fontStyle: {
       type: "string",
-      label: "Font family",
-      shorthand: "fs"
+      label: "Font style",
+      shorthand: "fs",
+      value: "normal",
     },
     letterSpacing: {
       type: "string",
-      label: "Character spacing",
+      label: "Letter spacing",
       shorthand: "ls",
+      value: "auto",
     },
     paddingTop: {
       type: "number",
       label: "Top padding",
       shorthand: "pt",
+      value: 5,
     },
     paddingBottom: {
       type: "number",
       label: "Bottom padding",
       shorthand: "pb",
+      value: 5,
     },
     paddingLeft: {
       type: "number",
       label: "Left padding",
       shorthand: "pl",
+      value: 5,
     },
     paddingRight: {
       type: "number",
       label: "Right padding",
       shorthand: "pr",
+      value: 5,
     },
     customCSS: {
       type: "string",
       label: "Custom stylesheet URL",
       shorthand: "cs",
+      value: "http://example.org",
     },
-  },
-  initialValues: {
-    hours: 1,
-    minutes: 5,
-    seconds: 30,
-    background: "black",
-    color: "white",
-    width: "auto",
-    textAlign: "center",
-    fontFamily: "Arial",
-    fontSize: "40px",
-    fontWeight: "normal",
-    fontStyle: "italic",
-    letterSpacing: "normal",
-    textDecoration: "none",
-    paddingTop: 5,
-    paddingBottom: 5,
-    paddingLeft: 5,
-    paddingRight: 5,
-    customCSS: "",
   },
 };
 

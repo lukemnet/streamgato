@@ -1,9 +1,7 @@
 import metadata from './metadata';
 import widgets from './widgets';
 
-const config = {
-  metadata, 
+export { 
+  metadata,
   widgets,
-}
-
-export default config;
+};

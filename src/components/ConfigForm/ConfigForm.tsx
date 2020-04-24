@@ -3,43 +3,44 @@ import React from 'react';
 import cx from 'classnames';
 
 interface ConfigFormProps {
-  settings: any;
-  initialValues: any;
+  params: any;
+  onChange: any;
 }
 
 const ConfigForm = ({
-  settings,
-  initialValues,
-}: ConfigFormProps) => (
-  <div className={cx('ConfigForm')}>
-    <h2>Form</h2>
-    <div style={{ overflow: "hidden" }}>
-      {JSON.stringify(settings)}
+  params,
+  onChange,
+}: ConfigFormProps) => {
+  console.log(onChange);
+
+  return (
+    <div className={cx('ConfigForm')}>
+      <h2>Form</h2>
+      <div style={{ overflow: "hidden" }}>
+        {JSON.stringify(params)}
+      </div>
+      {/* <Formik
+        initialValues={{
+          social: {
+            facebook: '',
+            twitter: '',
+          },
+        }}
+        onSubmit={values => {
+          // same shape as initial values
+          console.log(values);
+        }}
+      >
+        <Form>
+          <Field name="background-color" />
+          <Field name="font-family" />
+          <Field name="font-size" />
+                  
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik> */}
     </div>
-    <div style={{ overflow: "hidden" }}>
-      {JSON.stringify(initialValues)}
-    </div>
-    {/* <Formik
-      initialValues={{
-        social: {
-          facebook: '',
-          twitter: '',
-        },
-      }}
-      onSubmit={values => {
-        // same shape as initial values
-        console.log(values);
-      }}
-    >
-      <Form>
-        <Field name="background-color" />
-        <Field name="font-family" />
-        <Field name="font-size" />
-                
-        <button type="submit">Submit</button>
-      </Form>
-    </Formik> */}
-  </div>
-);
+  );
+}
 
 export default ConfigForm;

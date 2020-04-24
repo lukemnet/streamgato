@@ -2,7 +2,7 @@ import React, { ReactElement, useEffect } from 'react';
 import classnames from 'classnames/bind';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
-import config from 'config/config';
+import { metadata } from 'config/config';
 
 import './bootstrap.scss';
 import styles from './Page.module.scss';
@@ -20,13 +20,11 @@ const Page = ({
   title,
   children
 }: GenericPageProps) => {
-  const { metadata } = config;
-
   useEffect(() => {
     document.title = title
       ? `${title} | ${metadata.title}`
       : metadata.title;
-  }, [title, metadata.title]);
+  }, [title]);
 
   return (
     <div className={cx('Page', className)}>
