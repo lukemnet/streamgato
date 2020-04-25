@@ -1,10 +1,20 @@
 import React from 'react';
-// import { Formik, Form, Field } from 'formik';
+import { Formik, Form/*, Field*/ } from 'formik';
 import cx from 'classnames';
 
+export interface ConfigFormField {
+  type: string;
+  label: string;
+  value: string;
+}
+
+interface ConfigFormParam {
+  [key:string]: ConfigFormField;
+}
+
 interface ConfigFormProps {
-  params: any;
-  onChange: any;
+  params: ConfigFormParam;
+  onChange: Function;
 }
 
 const ConfigForm = ({
@@ -12,33 +22,23 @@ const ConfigForm = ({
   onChange,
 }: ConfigFormProps) => {
   console.log(onChange);
+  const fields = Object.keys(params);
 
   return (
     <div className={cx('ConfigForm')}>
       <h2>Form</h2>
-      <div style={{ overflow: "hidden" }}>
-        {JSON.stringify(params)}
-      </div>
-      {/* <Formik
-        initialValues={{
-          social: {
-            facebook: '',
-            twitter: '',
-          },
-        }}
-        onSubmit={values => {
-          // same shape as initial values
-          console.log(values);
-        }}
+      <Formik
+        initialValues={params}
+        onSubmit={() => {}}
       >
         <Form>
-          <Field name="background-color" />
-          <Field name="font-family" />
-          <Field name="font-size" />
-                  
-          <button type="submit">Submit</button>
+          {fields.map(field => (
+            <div>
+              {JSON.stringify(params[field])}
+            </div>
+          ))}
         </Form>
-      </Formik> */}
+      </Formik>
     </div>
   );
 }

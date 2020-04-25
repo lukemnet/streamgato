@@ -11,8 +11,13 @@ interface WidgetPageProps {
   className?: string;
   widget: {
     name: string;
-    params: unknown;
+    params: any;
   };
+}
+
+interface ConfigParam {
+  shorthand: string;
+  value: string | number;
 }
 
 const WidgetPage = ({
@@ -25,6 +30,7 @@ const WidgetPage = ({
   } = widget;
 
   const [ settings, setSettings ] = useState(params);
+  const configValues = Object.values(settings) as ConfigParam[];
 
   return (
     <Page
@@ -43,8 +49,8 @@ const WidgetPage = ({
               params={settings}
               onChange={setSettings}
             />
-            <Widget params={settings} />
-            <WidgetUrl params={settings} />
+            <Widget params={configValues} />
+            <WidgetUrl params={configValues} />
             <BackToIndexLink />
           </Col>
         </Row>

@@ -1,13 +1,19 @@
 import React from 'react';
 
+export interface WidgetParam {
+  shorthand: string;
+  value: string | number;
+}
 interface WidgetProps {
-  params: any;
+  params: WidgetParam[];
 }
 
 const Widget = ({ params }: WidgetProps) => (
   <div style={{ overflow: "hidden" }}>
-    <h2>Preview</h2>
-    {JSON.stringify(params)}
+    <h2>Widget</h2>
+    {params.map(param => (
+      <div>{param.shorthand}: {param.value}</div>
+    ))}
   </div>
 );
 
