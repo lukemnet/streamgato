@@ -1,20 +1,10 @@
-import React from 'react';
-import { Formik, Form/*, Field*/ } from 'formik';
-import cx from 'classnames';
+import React, { ChangeEvent } from 'react';
 
-export interface ConfigFormField {
-  type: string;
-  label: string;
-  value: string;
-}
-
-interface ConfigFormParam {
-  [key:string]: ConfigFormField;
-}
+export type onChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
 
 interface ConfigFormProps {
-  params: ConfigFormParam;
-  onChange: Function;
+  params: any;
+  onChange: onChangeFn;
 }
 
 const ConfigForm = ({
@@ -22,25 +12,59 @@ const ConfigForm = ({
   onChange,
 }: ConfigFormProps) => {
   console.log(onChange);
-  const fields = Object.keys(params);
+  const fieldNames = Object.keys(params);
 
   return (
-    <div className={cx('ConfigForm')}>
-      <h2>Form</h2>
-      <Formik
-        initialValues={params}
-        onSubmit={() => {}}
-      >
-        <Form>
-          {fields.map(field => (
-            <div>
-              {JSON.stringify(params[field])}
-            </div>
-          ))}
-        </Form>
-      </Formik>
-    </div>
-  );
+    <form>
+      {fieldNames.map((fieldName: any) => {
+        const field = params[fieldName];
+        return (
+          <div key={fieldName}>
+            <label>{field.label}</label>
+            <input
+              type="text"
+              name={fieldName}
+              onChange={onChange}
+            />
+          </div>
+        );
+      })}
+    </form>
+    // <Formik
+    //   initialValues={initialValues}
+      
+    //   onSubmit={() => {}}
+    // >
+    //   {(props: FormikProps<any>) => (
+    //     <Form>
+    //       {fieldNames.map(fieldName => {
+    //         const fieldParams = params[fieldName];
+
+    //         return (
+    //           <Field key={fieldName} name={fieldName}>
+    //             {({
+    //               field,
+    //             }: any) => {
+    //               console.log(field);
+    //               return (
+    //                 <div>
+    //                   <label>{fieldParams.label}</label>
+    //                   <input
+    //                     onChange={() => onChange()}
+    //                     type={fieldParams.type}
+    //                     name={fieldParams.name}
+    //                     value={field.value}
+    //                   />
+    //                 </div>
+    //               );
+    //             }}
+    //           </Field>
+    //         );
+    //       })}
+    //   </Form>
+    //   )}
+    // </Formik>
+);
 }
 
 export default ConfigForm;

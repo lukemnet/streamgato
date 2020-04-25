@@ -11,8 +11,8 @@ interface WidgetProps {
 const Widget = ({ params }: WidgetProps) => (
   <div style={{ overflow: "hidden" }}>
     <h2>Widget</h2>
-    {params.map(param => (
-      <div>{param.shorthand}: {param.value}</div>
+    {params.map((param, key) => (
+      <div key={key}>{param.shorthand}: {param.value}</div>
     ))}
   </div>
 );

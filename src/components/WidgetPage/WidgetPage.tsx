@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import cx from 'classnames';
 import { Container, Row, Col } from 'react-bootstrap';
 import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
-import ConfigForm from 'components/ConfigForm/ConfigForm';
+import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
 import Widget from 'components/Widget/Widget';
 import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
 
@@ -31,6 +31,14 @@ const WidgetPage = ({
 
   const [ settings, setSettings ] = useState(params);
   const configValues = Object.values(settings) as ConfigParam[];
+  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setSettings({
+      ...settings,
+      [e.target.name]: {
+        ...settings[e.target.name],
+        value: e.target.value,
+      },
+    });
 
   return (
     <Page
@@ -45,9 +53,9 @@ const WidgetPage = ({
         </Row>
         <Row>
           <Col>
-            <ConfigForm
+            <ConfigFormSection
               params={settings}
-              onChange={setSettings}
+              onChange={onChange}
             />
             <Widget params={configValues} />
             <WidgetUrl params={configValues} />

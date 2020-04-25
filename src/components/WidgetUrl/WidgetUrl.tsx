@@ -8,8 +8,8 @@ interface WidgetUrlProps {
 const WidgetUrl = ({ params }: WidgetUrlProps) => (
   <div style={{ overflow: "hidden" }}>
     <h2>Widget URL</h2>
-    {params.map(param => (
-      <div>{param.shorthand}: {param.value}</div>
+    {params.map((param, key) => (
+      <div key={key}>{param.shorthand}: {param.value}</div>
     ))}
   </div>
 );
