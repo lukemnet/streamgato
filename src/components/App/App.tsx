@@ -9,19 +9,22 @@ import WidgetPage from 'components/WidgetPage/WidgetPage';
 import IndexPage from 'components/IndexPage/IndexPage';
 import { widgets } from 'config/config';
 
-const App = () => (
-  <Router>
-    <Switch>
-      {widgets.map((widget, key) => (
-        <Route key={key} path={widget.route}>
-          <WidgetPage widget={widget} />
+const App = () => {
+  console.log(widgets);
+  return (
+    <Router>
+      <Switch>
+        {widgets.map((widget, key) => (
+          <Route key={key} path={widget.route}>
+            <WidgetPage widget={widget} />
+          </Route>
+        ))}
+        <Route path="/">
+          <IndexPage widgets={widgets} />
         </Route>
-      ))}
-      <Route path="/">
-        <IndexPage widgets={widgets} />
-      </Route>
-    </Switch>
-  </Router>
-);
+      </Switch>
+    </Router>
+  );
+}
 
 export default App;

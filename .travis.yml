@@ -17,7 +17,6 @@ jobs:
 
 node_js:
   - 'lts/*'
-  - 'node'
 
 install:
   - npm install
