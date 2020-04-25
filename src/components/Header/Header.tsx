@@ -9,14 +9,14 @@ const Header = () => (
     <Navbar bg="dark" variant="dark">
       <Container fluid="md">
         <Row>
-          <Col sm={12} md={6}>
+          <Col xs={12} sm={6}>
             <NavLink to="/" className="navbar-brand">
               <span role="img" aria-label="cat">😺</span>
               &nbsp;
               {metadata.title}
             </NavLink>
           </Col>
-          <Col sm={12} md={6}>
+          <Col xs={12} sm={6}>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
