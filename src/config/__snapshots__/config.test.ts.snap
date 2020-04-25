@@ -319,6 +319,12 @@ Object {
       "alias": "lf",
       "name": "Last.fm Recent Song",
       "params": Object {
+        "apiKey": Object {
+          "label": "API key",
+          "shorthand": "ak",
+          "type": "string",
+          "value": "",
+        },
         "background": Object {
           "label": "Background color",
           "shorthand": "bg",
@@ -361,23 +367,11 @@ Object {
           "type": "string",
           "value": "bold",
         },
-        "hours": Object {
-          "label": "Hours",
-          "shorthand": "h",
-          "type": "number",
-          "value": 1,
-        },
         "letterSpacing": Object {
           "label": "Letter spacing",
           "shorthand": "ls",
           "type": "string",
           "value": "auto",
-        },
-        "minutes": Object {
-          "label": "Minutes",
-          "shorthand": "m",
-          "type": "number",
-          "value": 5,
         },
         "paddingBottom": Object {
           "label": "Bottom padding",
@@ -402,12 +396,6 @@ Object {
           "shorthand": "pt",
           "type": "number",
           "value": 5,
-        },
-        "seconds": Object {
-          "label": "Seconds",
-          "shorthand": "s",
-          "type": "number",
-          "value": 30,
         },
         "width": Object {
           "label": "Container width",
