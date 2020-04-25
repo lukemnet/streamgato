@@ -3,14 +3,9 @@ env:
     - CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID
 
 language: node_js
-
-os:
-  - linux
-
+os: linux
 dist: bionic
-
-node_js:
-  - 'lts/*'
+node_js: 'lts/*'
 
 install:
   - npm install
