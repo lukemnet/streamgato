@@ -5,8 +5,10 @@ import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
 import Widget from 'components/Widget/Widget';
-// import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
+import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
 import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
+import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
+import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
 
 interface WidgetPageProps {
   className?: string;
@@ -34,18 +36,20 @@ const WidgetPage = ({
   const defaultSettings = getDefaultSettings(params);
   const [ settings, setSettings ] = useState(params);
   const configValues = Object.values(settings) as ConfigParam[];
+  const shorthandSettings = getShorthandValues(configValues);
+  const computedSettings = getComputedSettings(shorthandSettings, defaultSettings);
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
-      setSettings({
-        ...settings,
-        [name]: {
-          ...settings[name],
-          value: settings[name].type === 'number'
-            ? Number(value)
-            : value,
-        },
-      });
+    setSettings({
+      ...settings,
+      [name]: {
+        ...settings[name],
+        value: settings[name].type === 'number'
+          ? Number(value)
+          : value,
+      },
+    });
   }
 
   return (
@@ -68,14 +72,13 @@ const WidgetPage = ({
           </Col>
           <Col>
             <Widget
-                alias={alias}
-                params={configValues}
-                defaultSettings={defaultSettings}
-              />
-              {/* <WidgetUrl
-                alias={alias}
-                params={configValues}
-              /> */}
+              alias={alias}
+              params={computedSettings}
+            />
+            <WidgetUrl
+              alias={alias}
+              params={computedSettings}
+            />
           </Col>
         </Row>
         <Row>
