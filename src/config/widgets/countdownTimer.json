@@ -7,19 +7,24 @@
       "type": "number",
       "label": "Hours",
       "shorthand": "h",
-      "value": 1
+      "value": 1,
+      "min": 0
     },
     "minutes": {
       "type": "number",
       "label": "Minutes",
       "shorthand": "m",
-      "value": 5
+      "value": 5,
+      "min": 0,
+      "max": 59
     },
     "seconds": {
       "type": "number",
       "label": "Seconds",
       "shorthand": "s",
-      "value": 30
+      "value": 30,
+      "min": 0,
+      "max": 59
     },
     "background": {
       "type": "string",
@@ -37,7 +42,7 @@
       "type": "number",
       "label": "Container width",
       "shorthand": "w",
-      "value": "200"
+      "value": "auto"
     },
     "fontFamily": {
       "type": "string",
@@ -49,7 +54,8 @@
       "type": "number",
       "label": "Font size",
       "shorthand": "fz",
-      "value": 24
+      "value": 24,
+      "min": 1
     },
     "fontWeight": {
       "type": "string",
@@ -61,43 +67,47 @@
       "type": "string",
       "label": "Font style",
       "shorthand": "fs",
-      "value": "normal"
+      "value": ""
     },
     "letterSpacing": {
       "type": "string",
       "label": "Letter spacing",
       "shorthand": "ls",
-      "value": "auto"
+      "value": ""
     },
     "paddingTop": {
       "type": "number",
       "label": "Top padding",
       "shorthand": "pt",
-      "value": 5
+      "value": 5,
+      "min": 0
     },
     "paddingBottom": {
       "type": "number",
       "label": "Bottom padding",
       "shorthand": "pb",
-      "value": 5
+      "value": 5,
+      "min": 0
     },
     "paddingLeft": {
       "type": "number",
       "label": "Left padding",
       "shorthand": "pl",
-      "value": 5
+      "value": 5,
+      "min": 0
     },
     "paddingRight": {
       "type": "number",
       "label": "Right padding",
       "shorthand": "pr",
-      "value": 5
+      "value": 5,
+      "min": 0
     },
     "customCSS": {
       "type": "string",
       "label": "Custom stylesheet URL",
       "shorthand": "cs",
-      "value": "http://example.org"
+      "value": ""
     }
   }
 }

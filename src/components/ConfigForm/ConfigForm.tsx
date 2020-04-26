@@ -21,9 +21,10 @@ const ConfigForm = ({
           <div key={fieldName}>
             <label>{field.label}</label>
             <input
-              type="text"
+              type={field.type === "string" ? "text" : "number"}
               name={fieldName}
               onChange={onChange}
+              value={field.value}
             />
           </div>
         );

@@ -5,7 +5,8 @@ import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
 import Widget from 'components/Widget/Widget';
-import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
+// import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
+import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 
 interface WidgetPageProps {
   className?: string;
@@ -30,17 +31,22 @@ const WidgetPage = ({
     alias,
     params,
   } = widget;
-
+  const defaultSettings = getDefaultSettings(params);
   const [ settings, setSettings ] = useState(params);
   const configValues = Object.values(settings) as ConfigParam[];
-  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setSettings({
-      ...settings,
-      [e.target.name]: {
-        ...settings[e.target.name],
-        value: e.target.value,
-      },
-    });
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+      setSettings({
+        ...settings,
+        [name]: {
+          ...settings[name],
+          value: settings[name].type === 'number'
+            ? Number(value)
+            : value,
+        },
+      });
+  }
 
   return (
     <Page
@@ -59,14 +65,21 @@ const WidgetPage = ({
               params={settings}
               onChange={onChange}
             />
+          </Col>
+          <Col>
             <Widget
-              alias={alias}
-              params={configValues}
-            />
-            <WidgetUrl
-              alias={alias}
-              params={configValues}
-            />
+                alias={alias}
+                params={configValues}
+                defaultSettings={defaultSettings}
+              />
+              {/* <WidgetUrl
+                alias={alias}
+                params={configValues}
+              /> */}
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <BackToIndexLink />
           </Col>
         </Row>
