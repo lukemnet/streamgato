@@ -36,6 +36,7 @@ const WidgetPage = ({
   const defaultSettings = getDefaultSettings(params);
   const [ settings, setSettings ] = useState(params);
   const configValues = Object.values(settings) as ConfigParam[];
+  console.log(configValues);
   const shorthandSettings = getShorthandValues(configValues);
   const computedSettings = getComputedSettings(shorthandSettings, defaultSettings);
 

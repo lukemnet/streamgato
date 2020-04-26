@@ -5,7 +5,7 @@ interface Params {
 
 const getShorthandValues = (params: Params[]) => {
   let shorthandValues = {} as { [key: string]: string | number };
-  // reduce?
+
   params.forEach(param => {
     const { shorthand, value } = param;
     shorthandValues[shorthand] = value;
