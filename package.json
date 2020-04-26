@@ -14,7 +14,6 @@
     "@types/react-router-dom": "5.1.4",
     "bootstrap": "4.4.1",
     "classnames": "2.2.6",
-    "formik": "2.1.4",
     "node-sass": "4.14.0",
     "react": "16.13.1",
     "react-bootstrap": "1.0.1",
@@ -46,9 +45,9 @@
     ]
   },
   "jest": {
-    "coveragePathIgnorePatterns" : [
+    "coveragePathIgnorePatterns": [
       "<rootDir>/src/serviceWorker.ts",
-      "<rootDir>/src/index.tsx" 
+      "<rootDir>/src/index.tsx"
     ]
   }
 }

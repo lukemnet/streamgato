@@ -11,6 +11,7 @@ interface WidgetPageProps {
   className?: string;
   widget: {
     name: string;
+    alias: string;
     params: any;
   };
 }
@@ -26,6 +27,7 @@ const WidgetPage = ({
 }: WidgetPageProps) => {
   const {
     name,
+    alias,
     params,
   } = widget;
 
@@ -57,8 +59,14 @@ const WidgetPage = ({
               params={settings}
               onChange={onChange}
             />
-            <Widget params={configValues} />
-            <WidgetUrl params={configValues} />
+            <Widget
+              alias={alias}
+              params={configValues}
+            />
+            <WidgetUrl
+              alias={alias}
+              params={configValues}
+            />
             <BackToIndexLink />
           </Col>
         </Row>

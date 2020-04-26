@@ -5,12 +5,13 @@ export interface WidgetParam {
   value: string | number;
 }
 interface WidgetProps {
+  alias: string;
   params: WidgetParam[];
 }
 
-const Widget = ({ params }: WidgetProps) => (
+const Widget = ({ alias, params }: WidgetProps) => (
   <div style={{ overflow: "hidden" }}>
-    <h2>Widget</h2>
+    <h2>{alias} - Widget</h2>
     {params.map((param, key) => (
       <div key={key}>{param.shorthand}: {param.value}</div>
     ))}

@@ -11,7 +11,6 @@ const ConfigForm = ({
   params,
   onChange,
 }: ConfigFormProps) => {
-  console.log(onChange);
   const fieldNames = Object.keys(params);
 
   return (
@@ -30,40 +29,6 @@ const ConfigForm = ({
         );
       })}
     </form>
-    // <Formik
-    //   initialValues={initialValues}
-      
-    //   onSubmit={() => {}}
-    // >
-    //   {(props: FormikProps<any>) => (
-    //     <Form>
-    //       {fieldNames.map(fieldName => {
-    //         const fieldParams = params[fieldName];
-
-    //         return (
-    //           <Field key={fieldName} name={fieldName}>
-    //             {({
-    //               field,
-    //             }: any) => {
-    //               console.log(field);
-    //               return (
-    //                 <div>
-    //                   <label>{fieldParams.label}</label>
-    //                   <input
-    //                     onChange={() => onChange()}
-    //                     type={fieldParams.type}
-    //                     name={fieldParams.name}
-    //                     value={field.value}
-    //                   />
-    //                 </div>
-    //               );
-    //             }}
-    //           </Field>
-    //         );
-    //       })}
-    //   </Form>
-    //   )}
-    // </Formik>
 );
 }
 
