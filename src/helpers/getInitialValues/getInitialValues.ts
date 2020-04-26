@@ -1,5 +1,6 @@
 interface FormField {
-  value: string;
+  [key:string]: unknown;
+  value: string | number;
 }
 
 interface FormParam {
@@ -10,7 +11,8 @@ interface InitialValues {
   [key:string]: string | number;
 }
 
-const getInitialValues = (fieldNames: string[], params: FormParam) => {
+const getInitialValues = (params: FormParam) => {
+  const fieldNames = Object.keys(params);
   let initialValues = {} as InitialValues;
 
   fieldNames.forEach(fieldName => {

@@ -3,7 +3,6 @@ import classnames from 'classnames/bind';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 import { metadata } from 'config/config';
-
 import './bootstrap.scss';
 import styles from './Page.module.scss';
 

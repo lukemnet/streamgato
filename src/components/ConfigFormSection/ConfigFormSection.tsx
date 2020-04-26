@@ -1,8 +1,6 @@
 import React from 'react';
-// import { Formik, Form, FormikProps, Field } from 'formik';
 import cx from 'classnames';
 import ConfigForm, { onChangeFn } from 'components/ConfigForm/ConfigForm';
-// import getInitialValues from 'helpers/getInitialValues/getInitialValues';
 
 export interface ConfigFormField {
   type: string;
