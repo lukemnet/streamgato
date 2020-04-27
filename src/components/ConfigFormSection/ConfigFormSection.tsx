@@ -5,7 +5,9 @@ import ConfigForm, { onChangeFn } from 'components/ConfigForm/ConfigForm';
 export interface ConfigFormField {
   type: string;
   label: string;
-  value: string;
+  value: string | number;
+  min?: number;
+  max?: number;
 }
 
 interface ConfigFormParam {

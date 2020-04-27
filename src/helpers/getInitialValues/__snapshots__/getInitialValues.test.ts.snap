@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should return initial values 1`] = `
-Object {
-  "hours": 1,
-  "minutes": 5,
-  "seconds": 30,
-}
-`;

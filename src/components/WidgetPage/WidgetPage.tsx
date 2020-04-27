@@ -10,18 +10,23 @@ import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
 import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
 
+interface WidgetObject {
+  name: string;
+  alias: string;
+  params: {
+    [key:string]: {
+      type: string;
+      label: string;
+      shorthand: string;
+      value: string | number;
+      min?: number;
+      max?: number;
+    }
+  }
+}
 interface WidgetPageProps {
   className?: string;
-  widget: {
-    name: string;
-    alias: string;
-    params: any;
-  };
-}
-
-interface ConfigParam {
-  shorthand: string;
-  value: string | number;
+  widget: WidgetObject;
 }
 
 const WidgetPage = ({
@@ -35,7 +40,7 @@ const WidgetPage = ({
   } = widget;
   const defaultSettings = getDefaultSettings(params);
   const [ settings, setSettings ] = useState(params);
-  const configValues = Object.values(settings) as ConfigParam[];
+  const configValues = Object.values(settings);
   const shorthandSettings = getShorthandValues(configValues);
   const computedSettings = getComputedSettings(shorthandSettings, defaultSettings);
 

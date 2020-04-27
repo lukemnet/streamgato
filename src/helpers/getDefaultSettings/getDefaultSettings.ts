@@ -1,5 +1,5 @@
 interface FormField {
-  [key:string]: string | number;
+  shorthand: string;
   value: string | number;
 }
 
