@@ -2,12 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Page from 'components/Page/Page';
+import { Widget } from 'types';
 
 interface IndexPageProps {
-  widgets: {
-    route: string;
-    name: string;
-  }[];
+  widgets: Widget[];
 }
 
 const IndexPage = ({ widgets }: IndexPageProps) => (

@@ -1,8 +1,10 @@
-const getComputedSettings = (settings: any, defaultSettings: any) => {
-  const settingKeys = Object.keys(settings);
-  let computedSettings = {} as any;
+import { ShorthandValues } from 'types';
 
-  settingKeys.forEach((settingKey: any) => {
+const getComputedSettings = (settings: ShorthandValues, defaultSettings: ShorthandValues) => {
+  const settingKeys = Object.keys(settings);
+  let computedSettings = {} as ShorthandValues;
+
+  settingKeys.forEach((settingKey) => {
     const value = settings[settingKey];
     const defaultValue = defaultSettings[settingKey];
 

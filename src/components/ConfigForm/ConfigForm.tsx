@@ -1,13 +1,16 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
+import TextInput from 'components/TextInput/TextInput';
+import NumberInput from 'components/NumberInput/NumberInput';
+import { WidgetParams, OnChangeFn } from 'types';
 
-export type onChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
-
-interface ConfigFormProps {
-  params: any;
-  onChange: onChangeFn;
+export interface ConfigFormProps {
+  alias: string;
+  params: WidgetParams;
+  onChange: OnChangeFn;
 }
 
 const ConfigForm = ({
+  alias,
   params,
   onChange,
 }: ConfigFormProps) => {
@@ -15,17 +18,41 @@ const ConfigForm = ({
 
   return (
     <form>
-      {fieldNames.map((fieldName: any) => {
-        const field = params[fieldName];
+      {fieldNames.map((name) => {
+        const field = params[name];
+        const {
+          label,
+          type,
+          value,
+          min,
+          max,
+        } = field;
+        const fieldName = `${alias}_${name}`;
         return (
           <div key={fieldName}>
-            <label>{field.label}</label>
-            <input
-              type={field.type === "string" ? "text" : "number"}
-              name={fieldName}
-              onChange={onChange}
-              value={field.value}
-            />
+            <label htmlFor={fieldName}>
+              {label}
+            </label>
+            {type === "string" && (
+              <TextInput
+                {...{
+                  name: fieldName,
+                  onChange,
+                  value,
+                }}
+              />
+            )}
+            {type === "number" && (
+              <NumberInput
+                {...{
+                  name: fieldName,
+                  onChange,
+                  value,
+                  min,
+                  max,
+                }}
+              />
+            )}
           </div>
         );
       })}

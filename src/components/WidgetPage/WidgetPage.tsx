@@ -4,29 +4,16 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
-import Widget from 'components/Widget/Widget';
+import WidgetPreview from 'components/WidgetPreview/WidgetPreview';
 import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
 import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
 import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
+import { Widget } from 'types';
 
-interface WidgetObject {
-  name: string;
-  alias: string;
-  params: {
-    [key:string]: {
-      type: string;
-      label: string;
-      shorthand: string;
-      value: string | number;
-      min?: number;
-      max?: number;
-    }
-  }
-}
 interface WidgetPageProps {
   className?: string;
-  widget: WidgetObject;
+  widget: Widget;
 }
 
 const WidgetPage = ({
@@ -71,12 +58,13 @@ const WidgetPage = ({
         <Row>
           <Col>
             <ConfigFormSection
+              alias={alias}
               params={settings}
               onChange={onChange}
             />
           </Col>
           <Col>
-            <Widget
+            <WidgetPreview
               alias={alias}
               params={computedSettings}
             />

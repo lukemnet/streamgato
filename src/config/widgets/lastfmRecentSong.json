@@ -1,7 +1,7 @@
 {
   "name": "Last.fm Recent Song",
   "route": "/lastfmrecentsong",
-  "alias": "lf",
+  "alias": "rs",
   "params": {
     "apiKey": {
       "type": "string",

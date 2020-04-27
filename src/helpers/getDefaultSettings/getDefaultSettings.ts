@@ -1,19 +1,8 @@
-interface FormField {
-  shorthand: string;
-  value: string | number;
-}
+import { WidgetParams, ShorthandValues } from 'types';
 
-interface FormParam {
-  [key:string]: FormField;
-}
-
-interface InitialValues {
-  [key:string]: string | number;
-}
-
-const getDefaultSettings = (params: FormParam) => {
+const getDefaultSettings = (params: WidgetParams) => {
   const fieldNames = Object.keys(params);
-  let defaultSettings = {} as InitialValues;
+  let defaultSettings = {} as ShorthandValues;
 
   fieldNames.forEach(fieldName => {
     const { shorthand, value }  = params[fieldName];

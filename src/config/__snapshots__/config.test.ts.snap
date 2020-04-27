@@ -7,7 +7,7 @@ Object {
   },
   "widgets": Array [
     Object {
-      "alias": "cd",
+      "alias": "ct",
       "name": "Countdown Timer",
       "params": Object {
         "background": Object {
@@ -326,7 +326,7 @@ Object {
       "route": "/socialmediawidget",
     },
     Object {
-      "alias": "lf",
+      "alias": "rs",
       "name": "Last.fm Recent Song",
       "params": Object {
         "apiKey": Object {

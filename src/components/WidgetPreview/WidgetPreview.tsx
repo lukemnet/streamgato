@@ -1,11 +1,9 @@
 import React from 'react';
+import { ShorthandValues } from 'types';
 
-export interface WidgetParam {
-  [key: string]: string | number;
-}
 interface WidgetProps {
   alias: string;
-  params: WidgetParam;
+  params: ShorthandValues;
 }
 
 const Widget = ({ alias, params }: WidgetProps) => (

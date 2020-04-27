@@ -1,9 +1,9 @@
 import React from 'react';
-import { WidgetParam } from 'components/Widget/Widget';
+import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
   alias: string;
-  params: WidgetParam;
+  params: ShorthandValues;
 }
 
 const WidgetUrl = ({ alias, params }: WidgetUrlProps) => (

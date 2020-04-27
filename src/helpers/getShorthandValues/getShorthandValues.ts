@@ -1,10 +1,7 @@
-interface Params {
-  shorthand: string;
-  value: string | number;
-};
+import { WidgetParam, ShorthandValues } from 'types';
 
-const getShorthandValues = (params: Params[]) => {
-  let shorthandValues = {} as { [key: string]: string | number };
+const getShorthandValues = (params: WidgetParam[]) => {
+  let shorthandValues = {} as ShorthandValues;
 
   params.forEach(param => {
     const { shorthand, value } = param;
