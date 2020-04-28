@@ -58,6 +58,7 @@ Object {
           "value": "bold",
         },
         "hours": Object {
+          "info": "Required",
           "label": "Hours",
           "min": 0,
           "required": true,
@@ -73,7 +74,7 @@ Object {
           "value": "",
         },
         "minutes": Object {
-          "info": "0 to 59",
+          "info": "Required; 0 to 59",
           "label": "Minutes",
           "max": 59,
           "min": 0,
@@ -111,7 +112,7 @@ Object {
           "value": 0,
         },
         "seconds": Object {
-          "info": "0 to 59",
+          "info": "Required; 0 to 59",
           "label": "Seconds",
           "max": 59,
           "min": 0,

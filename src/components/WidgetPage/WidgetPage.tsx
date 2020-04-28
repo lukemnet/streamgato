@@ -50,21 +50,21 @@ const WidgetPage = ({
       className={cx(className)}
       title={name}
     >
-      <Container fluid="md">
+      <Container fluid="lg">
         <Row>
           <Col>
             <h1>{name}</h1>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col sm={12} md={6}>
             <ConfigFormSection
               alias={alias}
               params={settings}
               onChange={onChange}
             />
           </Col>
-          <Col>
+          <Col sm={12} md={6}>
             <WidgetPreview
               alias={alias}
               params={computedSettings}

@@ -30,8 +30,8 @@ const ConfigForm = ({
         } = field;
 
         return (
-          <Form.Group as={Row} controlId={fieldName}>
-            <Form.Label column sm={4}>
+          <Form.Group key={name} as={Row} controlId={fieldName}>
+            <Form.Label column sm={4} {...required && { className: 'required' }}>
               {label}
             </Form.Label>
             <Col sm={8}>
