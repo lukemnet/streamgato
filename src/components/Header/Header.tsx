@@ -5,13 +5,23 @@ import SiteLogo from 'components/SiteLogo/SiteLogo';
 import WidgetList from 'components/WidgetList/WidgetList';
 
 const Header = () => (
-  <Navbar fixed="top" bg="dark" variant="dark">
+  <Navbar
+    fixed="top"
+    bg="dark"
+    variant="dark"
+  >
     <Container fluid="xl">
       <Row>
-        <Col xs={12} sm={6}>
+        <Col
+          xs={12}
+          sm={6}
+        >
           <SiteLogo />
         </Col>
-        <Col xs={12} sm={6}>
+        <Col
+          xs={12}
+          sm={6}
+        >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">

@@ -57,14 +57,20 @@ const WidgetPage = ({
           </Col>
         </Row>
         <Row>
-          <Col sm={12} md={6}>
+          <Col
+            sm={12}
+            md={6}
+          >
             <ConfigFormSection
               alias={alias}
               params={settings}
               onChange={onChange}
             />
           </Col>
-          <Col sm={12} md={6}>
+          <Col
+            sm={12}
+            md={6}
+          >
             <WidgetPreview
               alias={alias}
               params={computedSettings}

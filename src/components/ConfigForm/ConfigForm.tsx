@@ -26,12 +26,18 @@ const ConfigForm = ({
           min,
           max,
           info,
-          required,
         } = field;
 
         return (
-          <Form.Group key={name} as={Row} controlId={fieldName}>
-            <Form.Label column sm={4} {...required && { className: 'required' }}>
+          <Form.Group
+            key={name}
+            as={Row}
+            controlId={fieldName}
+          >
+            <Form.Label
+              column
+              sm={4}
+            >
               {label}
             </Form.Label>
             <Col sm={8}>
@@ -41,7 +47,6 @@ const ConfigForm = ({
                   name={name}
                   placeholder={value.toString()}
                   onChange={onChange}
-                  required={required}
                 />
               )}
               {type === "number" && (
@@ -50,7 +55,6 @@ const ConfigForm = ({
                   name={name}
                   placeholder={value.toString()}
                   onChange={onChange}
-                  required={required}
                   min={min}
                   max={max}
                 />

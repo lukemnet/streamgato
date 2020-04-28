@@ -8,7 +8,6 @@ export interface WidgetParam {
   shorthand: string;
   info?: string;
   value: ParamValue;
-  required?: boolean;
   min?: number;
   max?: number;
 }
