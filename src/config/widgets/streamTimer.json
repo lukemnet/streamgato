@@ -7,19 +7,22 @@
       "type": "number",
       "label": "Hours",
       "shorthand": "h",
-      "value": 1
+      "value": 1,
+      "required": true
     },
     "minutes": {
       "type": "number",
       "label": "Minutes",
       "shorthand": "m",
-      "value": 5
+      "value": 5,
+      "required": true
     },
     "seconds": {
       "type": "number",
       "label": "Seconds",
       "shorthand": "s",
-      "value": 30
+      "value": 30,
+      "required": true
     },
     "background": {
       "type": "string",

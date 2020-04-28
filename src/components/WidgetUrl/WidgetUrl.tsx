@@ -8,7 +8,7 @@ interface WidgetUrlProps {
 
 const WidgetUrl = ({ alias, params }: WidgetUrlProps) => (
   <div style={{ overflow: "hidden" }}>
-    <h2>{alias} - Widget URL</h2>
+    <h2>Widget URL ({alias})</h2>
     <div>
       {JSON.stringify(params)}
     </div>

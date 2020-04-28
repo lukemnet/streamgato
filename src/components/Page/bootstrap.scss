@@ -1,1 +1,5 @@
 @import '~bootstrap/scss/bootstrap.scss';
+
+input:focus::placeholder {
+  color: transparent;
+}

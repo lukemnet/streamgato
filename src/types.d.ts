@@ -6,7 +6,9 @@ export interface WidgetParam {
   type: ParamType;
   label: string;
   shorthand: string;
+  info?: string;
   value: ParamValue;
+  required?: boolean;
   min?: number;
   max?: number;
 }

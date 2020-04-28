@@ -1,6 +1,5 @@
 import React from 'react';
-import TextInput from 'components/TextInput/TextInput';
-import NumberInput from 'components/NumberInput/NumberInput';
+import { Form, Row, Col } from 'react-bootstrap';
 import { WidgetParams, OnChangeFn } from 'types';
 
 export interface ConfigFormProps {
@@ -15,10 +14,10 @@ const ConfigForm = ({
   onChange,
 }: ConfigFormProps) => {
   const fieldNames = Object.keys(params);
-
   return (
-    <form>
+    <Form>
       {fieldNames.map((name) => {
+        const fieldName = `${alias}_${name}`;
         const field = params[name];
         const {
           label,
@@ -26,38 +25,45 @@ const ConfigForm = ({
           value,
           min,
           max,
+          info,
+          required,
         } = field;
-        const fieldName = `${alias}_${name}`;
+
         return (
-          <div key={fieldName}>
-            <label htmlFor={fieldName}>
+          <Form.Group as={Row} controlId={fieldName}>
+            <Form.Label column sm={4}>
               {label}
-            </label>
-            {type === "string" && (
-              <TextInput
-                {...{
-                  name: fieldName,
-                  onChange,
-                  value,
-                }}
-              />
-            )}
-            {type === "number" && (
-              <NumberInput
-                {...{
-                  name: fieldName,
-                  onChange,
-                  value,
-                  min,
-                  max,
-                }}
-              />
-            )}
-          </div>
+            </Form.Label>
+            <Col sm={8}>
+              {type === "string" && (
+                <Form.Control
+                  type="text"
+                  name={name}
+                  placeholder={value.toString()}
+                  onChange={onChange}
+                  required={required}
+                />
+              )}
+              {type === "number" && (
+                <Form.Control
+                  type="number"
+                  name={name}
+                  placeholder={value.toString()}
+                  onChange={onChange}
+                  required={required}
+                  min={min}
+                  max={max}
+                />
+              )}
+              <Form.Text className="text-muted">
+                {info}
+              </Form.Text>
+            </Col>
+          </Form.Group>
         );
       })}
-    </form>
-);
+    </Form>
+  );
 }
 
 export default ConfigForm;

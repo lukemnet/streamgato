@@ -33,6 +33,7 @@ const WidgetPage = ({
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
     setSettings({
       ...settings,
       [name]: {
