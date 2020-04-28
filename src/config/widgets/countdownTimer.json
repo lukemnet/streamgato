@@ -8,9 +8,7 @@
       "label": "Hours",
       "shorthand": "h",
       "value": 0,
-      "min": 0,
-      "required": true,
-      "info": "Required"
+      "min": 0
     },
     "minutes": {
       "type": "number",
@@ -19,8 +17,7 @@
       "value": 0,
       "min": 0,
       "max": 59,
-      "required": true,
-      "info": "Required; 0 to 59"
+      "info": "0 to 59"
     },
     "seconds": {
       "type": "number",
@@ -29,8 +26,7 @@
       "value": 0,
       "min": 0,
       "max": 59,
-      "required": true,
-      "info": "Required; 0 to 59"
+      "info": "0 to 59"
     },
     "background": {
       "type": "string",
