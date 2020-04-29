@@ -4,7 +4,11 @@ import { Widget } from 'types';
 
 type Element = (widget: Widget, key: string) => ReactElement;
 
-const getWidgetArray = (element: Element) =>
-  widgets.map(widget => element(widget, widget.alias));
+const getWidgetArray = (element?: Element) => {
+  if (element) {
+    return widgets.map(widget => element(widget, widget.alias));
+  }
+  return widgets;
+}
 
 export default getWidgetArray;
