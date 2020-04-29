@@ -5,8 +5,9 @@ import {
   Route,
 } from 'react-router-dom';
 
-import WidgetPage from 'components/WidgetPage/WidgetPage';
+import WidgetConfigPage from 'components/WidgetConfigPage/WidgetConfigPage';
 import IndexPage from 'components/IndexPage/IndexPage';
+import WidgetPage from 'components/WidgetPage/WidgetPage';
 import Error404 from 'components/Error404/Error404';
 import getWidgetArray from 'helpers/getWidgetArray/getWidgetArray';
 
@@ -25,7 +26,15 @@ const App = () => (
           path={widget.route}
           key={widget.alias}
         >
-          <WidgetPage widget={widget} />
+          <WidgetConfigPage widget={widget} />
+        </Route>
+      ))}
+      {getWidgetArray(widget => (
+        <Route
+          path={`/${widget.alias}`}
+          key={widget.alias}
+        >
+          <WidgetPage alias={widget.alias} />
         </Route>
       ))}
       <Route component={Error404} />
