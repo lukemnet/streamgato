@@ -1,46 +1,31 @@
 import React from 'react';
-import cx from 'classnames';
-import { Navbar, Container, Row, Col, Nav, NavDropdown } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import { metadata, widgets } from 'config/config';
+import { Navbar, Container, Row, Col } from 'react-bootstrap';
+import SiteLogo from 'components/SiteLogo/SiteLogo';
+import SiteMenu from 'components/SiteMenu/SiteMenu';
 
 const Header = () => (
-  <div className={cx('Header')}>
-    <Navbar bg="dark" variant="dark">
-      <Container fluid="md">
-        <Row>
-          <Col sm={12} md={6}>
-            <NavLink to="/" className="navbar-brand">
-              <span role="img" aria-label="cat">😺</span>
-              &nbsp;
-              {metadata.title}
-            </NavLink>
-          </Col>
-          <Col sm={12} md={6}>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
-                <NavDropdown
-                  title="Widgets"
-                  id="basic-nav-dropdown"
-                >
-                  {widgets.map((widget, key) => (
-                    <NavLink
-                      to={widget.route}
-                      className="dropdown-item"
-                      key={key}
-                    >
-                      {widget.name}
-                    </NavLink>
-                  ))}
-                </NavDropdown>
-              </Nav>
-            </Navbar.Collapse>
-          </Col>
-        </Row>
-      </Container>
-    </Navbar>
-  </div>
+  <Navbar
+    fixed="top"
+    bg="dark"
+    variant="dark"
+  >
+    <Container fluid="xl">
+      <Row>
+        <Col
+          xs={12}
+          sm={6}
+        >
+          <SiteLogo />
+        </Col>
+        <Col
+          xs={12}
+          sm={6}
+        >
+          <SiteMenu />
+        </Col>
+      </Row>
+    </Container>
+  </Navbar>
 );
 
 export default Header;

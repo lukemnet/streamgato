@@ -2,15 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Page from 'components/Page/Page';
+import WidgetList from 'components/WidgetList/WidgetList';
 
-interface IndexPageProps {
-  widgets: {
-    route: string;
-    name: string;
-  }[];
-}
-
-const IndexPage = ({ widgets }: IndexPageProps) => (
+const IndexPage = () => (
   <Page>
     <Container>
       <Row>
@@ -21,13 +15,15 @@ const IndexPage = ({ widgets }: IndexPageProps) => (
       <Row>
         <Col>
           <ul>
-          {widgets.map((widget, key) => (
-            <li key={key}>
-              <Link to={widget.route}>
-                {widget.name}
-              </Link>
-            </li>
-          ))}
+          <WidgetList>
+            {widget => (
+              <li>
+                <Link to={widget.route}>
+                  {widget.name}
+                </Link>
+              </li>
+            )}
+          </WidgetList>
           </ul>
         </Col>
       </Row>

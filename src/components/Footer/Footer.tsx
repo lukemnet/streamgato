@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import cx from 'classnames';
+import classnames from 'classnames/bind';
+import styles from './Footer.module.scss';
+
+const cx = classnames.bind(styles);
 
 const Footer = () => (
   <div className={cx('Footer')}>

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create shorthand values object 1`] = `
+Object {
+  "bg": "#000000",
+  "col": "#ffffff",
+  "h": 0,
+  "m": 0,
+  "s": 0,
+}
+`;

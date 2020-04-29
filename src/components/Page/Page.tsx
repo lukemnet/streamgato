@@ -2,12 +2,11 @@ import React, { ReactElement, useEffect } from 'react';
 import classnames from 'classnames/bind';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
-import { metadata } from 'config/config';
-
+import setPageTitle from 'helpers/setPageTitle/setPageTitle';
 import './bootstrap.scss';
 import styles from './Page.module.scss';
 
-interface GenericPageProps {
+interface PageProps {
   className?: string;
   title?: string;
   children: ReactElement | ReactElement[];
@@ -19,11 +18,9 @@ const Page = ({
   className,
   title,
   children
-}: GenericPageProps) => {
+}: PageProps) => {
   useEffect(() => {
-    document.title = title
-      ? `${title} | ${metadata.title}`
-      : metadata.title;
+    setPageTitle(title);
   }, [title]);
 
   return (

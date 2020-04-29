@@ -1,45 +1,72 @@
 import React from 'react';
-import { Formik, Form/*, Field*/ } from 'formik';
-import cx from 'classnames';
+import { Form, Row, Col } from 'react-bootstrap';
+import { WidgetParams, OnChangeFn } from 'types';
 
-export interface ConfigFormField {
-  type: string;
-  label: string;
-  value: string;
-}
-
-interface ConfigFormParam {
-  [key:string]: ConfigFormField;
-}
-
-interface ConfigFormProps {
-  params: ConfigFormParam;
-  onChange: Function;
+export interface ConfigFormProps {
+  alias: string;
+  params: WidgetParams;
+  onChange: OnChangeFn;
 }
 
 const ConfigForm = ({
+  alias,
   params,
   onChange,
 }: ConfigFormProps) => {
-  console.log(onChange);
-  const fields = Object.keys(params);
-
+  const fieldNames = Object.keys(params);
   return (
-    <div className={cx('ConfigForm')}>
-      <h2>Form</h2>
-      <Formik
-        initialValues={params}
-        onSubmit={() => {}}
-      >
-        <Form>
-          {fields.map(field => (
-            <div>
-              {JSON.stringify(params[field])}
-            </div>
-          ))}
-        </Form>
-      </Formik>
-    </div>
+    <Form>
+      {fieldNames.map((name) => {
+        const fieldName = `${alias}_${name}`;
+        const field = params[name];
+        const {
+          label,
+          type,
+          value,
+          min,
+          max,
+          info,
+        } = field;
+
+        return (
+          <Form.Group
+            key={name}
+            as={Row}
+            controlId={fieldName}
+          >
+            <Form.Label
+              column
+              sm={4}
+            >
+              {label}
+            </Form.Label>
+            <Col sm={8}>
+              {type === "string" && (
+                <Form.Control
+                  type="text"
+                  name={name}
+                  placeholder={value.toString()}
+                  onChange={onChange}
+                />
+              )}
+              {type === "number" && (
+                <Form.Control
+                  type="number"
+                  name={name}
+                  placeholder={value.toString()}
+                  onChange={onChange}
+                  min={min}
+                  max={max}
+                />
+              )}
+              <Form.Text className="text-muted">
+                {info}
+              </Form.Text>
+            </Col>
+          </Form.Group>
+        );
+      })}
+    </Form>
   );
 }
 

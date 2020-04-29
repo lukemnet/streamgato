@@ -1,25 +1,25 @@
 {
-  "name": "Countdown Timer",
-  "route": "/countdowntimer",
-  "alias": "cd",
+  "name": "Stream Timer",
+  "route": "/streamtimer",
+  "alias": "st",
   "params": {
     "hours": {
       "type": "number",
       "label": "Hours",
       "shorthand": "h",
-      "value": 1
+      "value": 0
     },
     "minutes": {
       "type": "number",
       "label": "Minutes",
       "shorthand": "m",
-      "value": 5
+      "value": 0
     },
     "seconds": {
       "type": "number",
       "label": "Seconds",
       "shorthand": "s",
-      "value": 30
+      "value": 0
     },
     "background": {
       "type": "string",

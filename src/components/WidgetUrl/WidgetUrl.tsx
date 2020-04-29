@@ -1,17 +1,25 @@
 import React from 'react';
-import { WidgetParam } from 'components/Widget/Widget';
+import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
-  params: WidgetParam[];
+  alias: string;
+  params: ShorthandValues;
 }
 
-const WidgetUrl = ({ params }: WidgetUrlProps) => (
-  <div style={{ overflow: "hidden" }}>
-    <h2>Widget URL</h2>
-    {params.map(param => (
-      <div>{param.shorthand}: {param.value}</div>
-    ))}
-  </div>
-);
+const WidgetUrl = ({ alias, params }: WidgetUrlProps) => {
+  const widgetUrl = `${window.location.protocol}//${window.location.host}/${alias}`;
+
+  return (
+    <div style={{ overflow: "hidden" }}>
+      <h2>Widget URL ({alias})</h2>
+      <div>
+        <a href={widgetUrl} target="_blank" rel="noopener noreferrer">{widgetUrl}</a>
+      </div>
+      <div>
+        {JSON.stringify(params)}
+      </div>
+    </div>
+  );
+}
 
 export default WidgetUrl;
