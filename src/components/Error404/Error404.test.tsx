@@ -1,17 +1,11 @@
 import React from 'react';
+import Error404 from './Error404';
 import { MemoryRouter as Router } from 'react-router-dom';
 import domRender from 'utils/domRender';
-import Page from './Page';
-
-const testProps = {
-  className: 'testClass',
-  title: 'Test title',
-  children: <div>Test child</div>,
-}
 
 const testedElement = () => (
   <Router>
-    <Page {...testProps} />
+    <Error404 />
   </Router>
 );
 

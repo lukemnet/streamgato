@@ -1,20 +1,14 @@
 import React from 'react';
 import { MemoryRouter as Router } from 'react-router-dom';
+import SiteLogo from './SiteLogo';
 import domRender from 'utils/domRender';
-import Page from './Page';
-
-const testProps = {
-  className: 'testClass',
-  title: 'Test title',
-  children: <div>Test child</div>,
-}
 
 const testedElement = () => (
   <Router>
-    <Page {...testProps} />
+    <SiteLogo />
   </Router>
 );
 
-it('renders correctly', () => {
+it('should render correctly', () => {
   domRender(testedElement);
-});
+})

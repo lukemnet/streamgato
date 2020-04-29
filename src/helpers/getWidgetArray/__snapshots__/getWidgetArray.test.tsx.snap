@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return widget array 1`] = `
+Array [
+  <p>
+    Test 
+    {"name":"Countdown Timer","route":"/countdowntimer","alias":"ct","params":{"hours":{"type":"number","label":"Hours","shorthand":"h","value":0,"min":0},"minutes":{"type":"number","label":"Minutes","shorthand":"m","value":0,"min":0,"max":59,"info":"0 to 59"},"seconds":{"type":"number","label":"Seconds","shorthand":"s","value":0,"min":0,"max":59,"info":"0 to 59"},"background":{"type":"string","label":"Background color","shorthand":"bg","value":"#000000","info":"Hex, RGB or RGBA. 'transparent' for no color"},"color":{"type":"string","label":"Text color","shorthand":"col","value":"#ffffff","info":"Hex, RGB or RGBA"},"width":{"type":"number","label":"Container width","shorthand":"w","value":0,"info":"0 = width calculated automatically"},"textAlign":{"type":"string","label":"Text align","shorthand":"ta","value":"center","info":"Available options: left, center, right"},"fontFamily":{"type":"string","label":"Font family","shorthand":"ff","value":"Arial"},"fontSize":{"type":"number","label":"Font size (px)","shorthand":"fz","value":24,"min":1},"fontWeight":{"type":"string","label":"Font weight","shorthand":"fw","value":"bold"},"fontStyle":{"type":"string","label":"Font style","shorthand":"fs","value":"","info":"Available options: normal, italic, oblique"},"letterSpacing":{"type":"string","label":"Letter spacing (px)","shorthand":"ls","value":"","info":"0 = normal"},"paddingTop":{"type":"number","label":"Top padding (px)","shorthand":"pt","value":0,"min":0},"paddingBottom":{"type":"number","label":"Bottom padding (px)","shorthand":"pb","value":0,"min":0},"paddingLeft":{"type":"number","label":"Left padding (px)","shorthand":"pl","value":0,"min":0},"paddingRight":{"type":"number","label":"Right padding (px)","shorthand":"pr","value":0,"min":0},"customCSS":{"type":"string","label":"Custom stylesheet URL","shorthand":"cs","value":"","info":"HTTPS links only"}}}
+     
+    ct
+     
+  </p>,
+  <p>
+    Test 
+    {"name":"Stream Timer","route":"/streamtimer","alias":"st","params":{"hours":{"type":"number","label":"Hours","shorthand":"h","value":0},"minutes":{"type":"number","label":"Minutes","shorthand":"m","value":0},"seconds":{"type":"number","label":"Seconds","shorthand":"s","value":0},"background":{"type":"string","label":"Background color","shorthand":"bg","value":"#000000"},"color":{"type":"string","label":"Text color","shorthand":"col","value":"#ffffff"},"width":{"type":"number","label":"Container width","shorthand":"w","value":"200"},"fontFamily":{"type":"string","label":"Font family","shorthand":"ff","value":"Arial"},"fontSize":{"type":"number","label":"Font size","shorthand":"fz","value":24},"fontWeight":{"type":"string","label":"Font weight","shorthand":"fw","value":"bold"},"fontStyle":{"type":"string","label":"Font style","shorthand":"fs","value":"normal"},"letterSpacing":{"type":"string","label":"Letter spacing","shorthand":"ls","value":"auto"},"paddingTop":{"type":"number","label":"Top padding","shorthand":"pt","value":5},"paddingBottom":{"type":"number","label":"Bottom padding","shorthand":"pb","value":5},"paddingLeft":{"type":"number","label":"Left padding","shorthand":"pl","value":5},"paddingRight":{"type":"number","label":"Right padding","shorthand":"pr","value":5},"customCSS":{"type":"string","label":"Custom stylesheet URL","shorthand":"cs","value":"http://example.org"}}}
+     
+    st
+     
+  </p>,
+  <p>
+    Test 
+    {"name":"Social Media Widget","route":"/socialmediawidget","alias":"sm","params":{"hours":{"type":"number","label":"Hours","shorthand":"h","value":1},"minutes":{"type":"number","label":"Minutes","shorthand":"m","value":5},"seconds":{"type":"number","label":"Seconds","shorthand":"s","value":30},"background":{"type":"string","label":"Background color","shorthand":"bg","value":"#000000"},"color":{"type":"string","label":"Text color","shorthand":"col","value":"#ffffff"},"width":{"type":"number","label":"Container width","shorthand":"w","value":"200"},"fontFamily":{"type":"string","label":"Font family","shorthand":"ff","value":"Arial"},"fontSize":{"type":"number","label":"Font size","shorthand":"fz","value":24},"fontWeight":{"type":"string","label":"Font weight","shorthand":"fw","value":"bold"},"fontStyle":{"type":"string","label":"Font style","shorthand":"fs","value":"normal"},"letterSpacing":{"type":"string","label":"Letter spacing","shorthand":"ls","value":"auto"},"paddingTop":{"type":"number","label":"Top padding","shorthand":"pt","value":5},"paddingBottom":{"type":"number","label":"Bottom padding","shorthand":"pb","value":5},"paddingLeft":{"type":"number","label":"Left padding","shorthand":"pl","value":5},"paddingRight":{"type":"number","label":"Right padding","shorthand":"pr","value":5},"customCSS":{"type":"string","label":"Custom stylesheet URL","shorthand":"cs","value":"http://example.org"}}}
+     
+    sm
+     
+  </p>,
+  <p>
+    Test 
+    {"name":"Last.fm Recent Song","route":"/lastfmrecentsong","alias":"rs","params":{"apiKey":{"type":"string","label":"API key","shorthand":"ak","value":""},"background":{"type":"string","label":"Background color","shorthand":"bg","value":"#000000"},"color":{"type":"string","label":"Text color","shorthand":"col","value":"#ffffff"},"width":{"type":"number","label":"Container width","shorthand":"w","value":"200"},"fontFamily":{"type":"string","label":"Font family","shorthand":"ff","value":"Arial"},"fontSize":{"type":"number","label":"Font size","shorthand":"fz","value":24},"fontWeight":{"type":"string","label":"Font weight","shorthand":"fw","value":"bold"},"fontStyle":{"type":"string","label":"Font style","shorthand":"fs","value":"normal"},"letterSpacing":{"type":"string","label":"Letter spacing","shorthand":"ls","value":"auto"},"paddingTop":{"type":"number","label":"Top padding","shorthand":"pt","value":5},"paddingBottom":{"type":"number","label":"Bottom padding","shorthand":"pb","value":5},"paddingLeft":{"type":"number","label":"Left padding","shorthand":"pl","value":5},"paddingRight":{"type":"number","label":"Right padding","shorthand":"pr","value":5},"customCSS":{"type":"string","label":"Custom stylesheet URL","shorthand":"cs","value":"http://example.org"}}}
+     
+    rs
+     
+  </p>,
+]
+`;
