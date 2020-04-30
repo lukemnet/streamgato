@@ -7,16 +7,13 @@ interface WidgetUrlProps {
   params: ShorthandValues;
 }
 
-const WidgetUrlSection = (props: WidgetUrlProps) => {
-
-  return (
-    <div style={{ overflow: "hidden" }}>
-      <h2>Widget URL</h2>
-      <div>
-        <WidgetUrl {...props} />
-      </div>
+const WidgetUrlSection = (props: WidgetUrlProps) => (
+  <div style={{ overflow: "hidden" }}>
+    <h2>Widget URL</h2>
+    <div>
+      <WidgetUrl {...props} />
     </div>
-  );
-}
+  </div>
+);
 
 export default WidgetUrlSection;

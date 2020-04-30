@@ -15,6 +15,6 @@ const testElement = () => (
   </WidgetList>
 );
 
-it('should render correctly', () => {
+it('renders correctly', () => {
   domRender(testElement);
 });

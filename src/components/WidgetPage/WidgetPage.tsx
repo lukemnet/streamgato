@@ -7,7 +7,6 @@ interface WidgetPageProps {
 
 const WidgetPage = ({ alias }: WidgetPageProps) => {
   const params = getURLparams();
-  // const urlParams
   return (
     <div>
       <p>WidgetPage</p>
