@@ -5,7 +5,7 @@ import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
 import WidgetPreview from 'components/WidgetPreview/WidgetPreview';
-import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
+import WidgetUrlSection from 'components/WidgetUrlSection/WidgetUrlSection';
 import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
 import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
@@ -75,7 +75,7 @@ const WidgetConfigPage = ({
               alias={alias}
               params={computedSettings}
             />
-            <WidgetUrl
+            <WidgetUrlSection
               alias={alias}
               params={computedSettings}
             />
