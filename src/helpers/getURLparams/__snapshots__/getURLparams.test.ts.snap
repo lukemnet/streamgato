@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create correct param object 1`] = `
+Object {
+  "pb": "10",
+  "pl": "5",
+  "pt": "5",
+}
+`;
+
+exports[`should return empty param object when no search params are present 1`] = `Object {}`;

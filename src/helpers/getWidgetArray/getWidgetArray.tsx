@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { widgets } from 'config/config';
 import { Widget } from 'types';
 
-type Element = (widget: Widget, key: string) => ReactElement;
+type Element = (widget: Widget, key: string) => ReactElement<{ widget: Widget, key: string }>;
 
 const getWidgetArray = (element?: Element) => {
   if (element) {
