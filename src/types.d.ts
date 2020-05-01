@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export type OnChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
 export type ParamType = "string" | "number"
 export type ParamValue = string | number;
@@ -23,6 +25,14 @@ export interface ShorthandValues {
 export interface Widget {
   name: string;
   route: string;
-  alias: string;
+  alias: WidgetAlias;
   params: WidgetParams;
 }
+
+export type WidgetAlias = 'ct' | 'st' | 'sm' | 'rs';
+
+export interface WidgetComponentProps {
+  params: ShorthandValues;
+};
+
+export type WidgetComponent = ReactElement<ShorthandValues>;

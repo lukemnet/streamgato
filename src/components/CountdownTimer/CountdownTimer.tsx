@@ -1,9 +1,15 @@
 import React from 'react';
+import { ShorthandValues } from 'types';
 
-const WidgetPage = () => (
+interface CountdownTimerProps {
+  params: ShorthandValues;
+}
+
+const CountdownTimer = ({ params }: CountdownTimerProps) => (
   <div>
-    <p>WidgetPage</p>
+    <p>CountdownTimer</p>
+    <p>{JSON.stringify(params)}</p>
   </div>
 );
 
-export default WidgetPage;
+export default CountdownTimer;
