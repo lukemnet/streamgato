@@ -64,6 +64,13 @@ Object {
           "type": "number",
           "value": 0,
         },
+        "leadingZeros": Object {
+          "info": "true or false",
+          "label": "Leading zeros?",
+          "shorthand": "lz",
+          "type": "string",
+          "value": "true",
+        },
         "letterSpacing": Object {
           "info": "0 = normal",
           "label": "Letter spacing (px)",
