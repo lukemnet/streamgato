@@ -41,17 +41,17 @@ const ConfigForm = ({
               {label}
             </Form.Label>
             <Col sm={8}>
-              {type === "string" && (
+              {type === 'string' && (
                 <Form.Control
-                  type="text"
+                  type='text'
                   name={name}
                   placeholder={value.toString()}
                   onChange={onChange}
                 />
               )}
-              {type === "number" && (
+              {type === 'number' && (
                 <Form.Control
-                  type="number"
+                  type='number'
                   name={name}
                   placeholder={value.toString()}
                   onChange={onChange}
@@ -59,7 +59,7 @@ const ConfigForm = ({
                   max={max}
                 />
               )}
-              <Form.Text className="text-muted">
+              <Form.Text className='text-muted'>
                 {info}
               </Form.Text>
             </Col>
@@ -68,6 +68,6 @@ const ConfigForm = ({
       })}
     </Form>
   );
-}
+};
 
 export default ConfigForm;

@@ -1,4 +1,4 @@
-import WidgetPreview from './WidgetPreview'
+import WidgetPreview from './WidgetPreview';
 import domRender from 'utils/domRender';
 
 const testParams = {
@@ -8,7 +8,7 @@ const testParams = {
     m: 2,
     s: 3,
   }
-}
+};
 
 it('renders correctly', () => {
   domRender(WidgetPreview, testParams);

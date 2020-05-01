@@ -11,4 +11,4 @@ const testedElement = () => (
 
 it('renders correctly', () => {
   domRender(testedElement);
-})
+});

@@ -26,7 +26,7 @@ const Page = ({
   return (
     <div className={cx('Page', className)}>
       <Header />
-      <main id="content">
+      <main id='content'>
         {children}
       </main>
       <footer>
@@ -34,6 +34,6 @@ const Page = ({
       </footer>
     </div>
   );
-}
+};
 
 export default Page;

@@ -9,6 +9,6 @@ const getShorthandValues = (params: WidgetParam[]) => {
   });
 
   return shorthandValues;
-}
+};
 
 export default getShorthandValues;

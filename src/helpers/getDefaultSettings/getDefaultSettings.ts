@@ -10,6 +10,6 @@ const getDefaultSettings = (params: WidgetParams) => {
   });
 
   return defaultSettings;
-}
+};
 
 export default getDefaultSettings;

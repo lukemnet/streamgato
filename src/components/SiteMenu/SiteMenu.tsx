@@ -6,17 +6,17 @@ import { Widget } from 'types';
 
 const SiteMenu = () => (
   <>
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
+    <Navbar.Collapse id='basic-navbar-nav'>
+      <Nav className='mr-auto'>
         <NavDropdown
-          title="Widgets"
-          id="basic-nav-dropdown"
+          title='Widgets'
+          id='basic-nav-dropdown'
         >
           {(getWidgetArray() as Widget[]).map(widget => (
             <NavLink
               key={widget.alias}
               to={widget.route}
-              className="dropdown-item"
+              className='dropdown-item'
             >
               {widget.name}
             </NavLink>
@@ -28,4 +28,3 @@ const SiteMenu = () => (
 );
 
 export default SiteMenu;
-

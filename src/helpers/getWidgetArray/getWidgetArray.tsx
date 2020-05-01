@@ -9,6 +9,6 @@ const getWidgetArray = (element?: Element) => {
     return widgets.map(widget => element(widget, widget.alias));
   }
   return widgets;
-}
+};
 
 export default getWidgetArray;

@@ -5,11 +5,11 @@ import SiteMenu from 'components/SiteMenu/SiteMenu';
 
 const Header = () => (
   <Navbar
-    fixed="top"
-    bg="dark"
-    variant="dark"
+    fixed='top'
+    bg='dark'
+    variant='dark'
   >
-    <Container fluid="xl">
+    <Container fluid='xl'>
       <Row>
         <Col
           xs={12}

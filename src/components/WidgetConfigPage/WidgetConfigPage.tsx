@@ -43,14 +43,14 @@ const WidgetConfigPage = ({
           : value,
       },
     });
-  }
+  };
 
   return (
     <Page
       className={cx(className)}
       title={name}
     >
-      <Container fluid="lg">
+      <Container fluid='lg'>
         <Row>
           <Col>
             <h1>{name}</h1>
@@ -89,6 +89,6 @@ const WidgetConfigPage = ({
       </Container>
     </Page>
   );
-}
+};
 
 export default WidgetConfigPage;

@@ -1,4 +1,4 @@
-import WidgetUrl from './WidgetUrl'
+import WidgetUrl from './WidgetUrl';
 import domRender from 'utils/domRender';
 
 it('renders correctly', () => {

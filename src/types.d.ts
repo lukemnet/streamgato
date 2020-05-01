@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 export type OnChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
-export type ParamType = "string" | "number"
+export type ParamType = 'string' | 'number';
 export type ParamValue = string | number;
 
 export interface WidgetParam {

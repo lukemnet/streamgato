@@ -22,8 +22,8 @@ const WidgetPage = ({ alias }: WidgetPageProps) => {
     sm: <SocialMediaWidget params={params} />,
     rs: <LastFmRecentSong params={params} />,
   } as WidgetListObject;
-  
+
   return widgets[alias];
-}
+};
 
 export default WidgetPage;

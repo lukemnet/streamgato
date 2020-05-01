@@ -8,7 +8,7 @@ interface WidgetUrlProps {
 }
 
 const WidgetUrlSection = (props: WidgetUrlProps) => (
-  <div style={{ overflow: "hidden" }}>
+  <div style={{ overflow: 'hidden' }}>
     <h2>Widget URL</h2>
     <div>
       <WidgetUrl {...props} />

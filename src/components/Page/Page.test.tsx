@@ -7,7 +7,7 @@ const testProps = {
   className: 'testClass',
   title: 'Test title',
   children: <div>Test child</div>,
-}
+};
 
 const testedElement = () => (
   <Router>

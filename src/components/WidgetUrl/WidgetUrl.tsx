@@ -13,12 +13,12 @@ const WidgetUrl = ({ alias, params }: WidgetUrlProps) => {
   return (
     <a
       href={widgetUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      target='_blank'
+      rel='noopener noreferrer'
     >
       {widgetUrl}
     </a>
   );
-}
+};
 
 export default WidgetUrl;

@@ -12,7 +12,7 @@ const widgets = [
   lastfmRecentSong,
 ] as Widget[];
 
-export { 
+export {
   metadata,
   widgets,
 };

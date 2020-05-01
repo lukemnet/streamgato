@@ -4,10 +4,10 @@ const getURLparams = () => {
     .replace(/"/g, '\\"')
     .replace(/&/g, '","')
     .replace(/=/g,'":"');
-  
+
   return queryString
     ? JSON.parse(`{"${parsedParams}"}`)
     : {};
-}
+};
 
 export default getURLparams;

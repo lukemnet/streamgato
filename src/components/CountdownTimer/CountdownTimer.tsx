@@ -17,8 +17,8 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
       <p>{JSON.stringify(params)}</p>
       <Timer
         initialTime={initialTime}
-        lastUnit="h"
-        direction="backward"
+        lastUnit='h'
+        direction='backward'
         formatValue={addLeadingZeros}
       >
         {() => (
@@ -31,6 +31,6 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
       </Timer>
     </div>
   );
-}
+};
 
 export default CountdownTimer;
