@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should add leading zeros to numbers 1`] = `"00"`;
+
+exports[`should add leading zeros to numbers 2`] = `"01"`;
+
+exports[`should add leading zeros to numbers 3`] = `"02"`;
+
+exports[`should add leading zeros to numbers 4`] = `"03"`;
+
+exports[`should add leading zeros to numbers 5`] = `"40"`;
+
+exports[`should add leading zeros to numbers 6`] = `"45"`;
+
+exports[`should add leading zeros to numbers 7`] = `"60"`;

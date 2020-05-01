@@ -1,6 +1,4 @@
 const addLeadingZeros = (value: number) =>
-  value < 10
-    ? `0${value}`
-    : String(value);
+  String(value).padStart(2, '0');
 
 export default addLeadingZeros;

@@ -1,7 +1,7 @@
 export interface CountdownTimerParams {
   h?: number;
   m?: number;
-  s: number;
+  s?: number;
 }
 
 const convertToMiliseconds = ({ h, m, s }: CountdownTimerParams) => {
