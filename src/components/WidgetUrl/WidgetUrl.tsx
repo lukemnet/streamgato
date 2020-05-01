@@ -1,5 +1,6 @@
 import React from 'react';
 import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
+import ExternalLink from 'components/ExternalLink/ExternalLink';
 import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
@@ -11,13 +12,12 @@ const WidgetUrl = ({ alias, params }: WidgetUrlProps) => {
   const widgetUrl = getWidgetUrl(alias, params);
 
   return (
-    <a
+    <ExternalLink
       href={widgetUrl}
-      target='_blank'
-      rel='noopener noreferrer'
+      newWindow={true}
     >
       {widgetUrl}
-    </a>
+    </ExternalLink>
   );
 };
 
