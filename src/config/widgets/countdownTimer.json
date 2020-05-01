@@ -28,6 +28,13 @@
       "max": 59,
       "info": "0 to 59"
     },
+    "leadingZeros": {
+      "type": "string",
+      "label": "Leading zeros?",
+      "shorthand": "lz",
+      "value": "true",
+      "info": "true or false"
+    },
     "background": {
       "type": "string",
       "label": "Background color",
