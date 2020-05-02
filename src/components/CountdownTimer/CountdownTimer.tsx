@@ -5,6 +5,7 @@ import {
   FlexPosition,
   FontWeight,
   FontStyle,
+  BorderStyle,
 } from 'types';
 import Timer from 'react-compound-timer';
 import convertToMiliseconds from 'helpers/convertToMiliseconds/convertToMiliseconds';
@@ -32,6 +33,22 @@ interface CountdownTimerParams {
   pl: number;
   pr: number;
   cs: string;
+  btz: number;
+  bts: BorderStyle;
+  btc: string;
+  bbz: number;
+  bbs: BorderStyle;
+  bbc: string;
+  blz: number;
+  bls: BorderStyle;
+  blc: string;
+  brz: number;
+  brs: BorderStyle;
+  brc: string;
+  rtl: number;
+  rtr: number;
+  rbl: number;
+  rbr: number;
 };
 
 interface CountdownTimerProps {
@@ -63,6 +80,22 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
     pl,
     pr,
     cs,
+    btz,
+    bts,
+    btc,
+    bbz,
+    bbs,
+    bbc,
+    blz,
+    bls,
+    blc,
+    brz,
+    brs,
+    brc,
+    rtl,
+    rtr,
+    rbl,
+    rbr,
   } = params;
 
   const flexPositionX = {
@@ -87,8 +120,8 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
   };
 
   const widgetStyles = {
-    backgroundColor: bg || 'transparent',
-    color: col || 'black',
+    backgroundColor: bg ? decodeURIComponent(bg) : 'transparent',
+    color: col ? decodeURIComponent(col) : 'black',
     width: w ? `${w}px` : 'auto',
     textAlign: ta || 'center',
     fontFamily: ff ? ff : 'Arial',
@@ -100,6 +133,22 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
     paddingBottom: pb ? `${pb}px` : 0,
     paddingLeft: pl ? `${pl}px` : 0,
     paddingRight: pr ? `${pr}px` : 0,
+    borderTopSize: btz || 0,
+    borderTopStyle: bts || 'none',
+    borderTopColor: btc ? decodeURIComponent(btc) : 'transparent',
+    borderBottomSize: bbz || 0,
+    borderBottomStyle: bbs || 'none',
+    borderBottomColor: bbc ? decodeURIComponent(bbc) : 'transparent',
+    borderLeftSize: blz || 0,
+    borderLeftStyle: bls || 'none',
+    borderLeftColor: blc ? decodeURIComponent(blc) : 'transparent',
+    borderRightSize: brz || 0,
+    borderRightStyle: brs || 'none',
+    borderRightColor: brc ? decodeURIComponent(brc) : 'transparent',
+    borderTopLeftRadius: rtl ? `${rtl}px` : 0,
+    borderTopRightRadius: rtr ? `${rtl}px` : 0,
+    borderBottomLeftRadius: rbl ? `${rtl}px` : 0,
+    borderBottomRightRadius: rbr ? `${rtl}px` : 0,
   };
 
   const initialTime = convertToMiliseconds({ h, m, s });
