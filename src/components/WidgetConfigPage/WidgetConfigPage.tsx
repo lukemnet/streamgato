@@ -70,6 +70,7 @@ const WidgetConfigPage = ({
           <Col
             sm={12}
             md={6}
+            className='fixed-right'
           >
             <WidgetPreview
               alias={alias}
