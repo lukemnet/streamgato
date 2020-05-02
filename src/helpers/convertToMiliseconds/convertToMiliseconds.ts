@@ -1,4 +1,4 @@
-export interface CountdownTimerParams {
+interface CountdownTimerParams {
   h: number;
   m: number;
   s: number;

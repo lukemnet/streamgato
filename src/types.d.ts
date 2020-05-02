@@ -4,6 +4,11 @@ export type OnChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
 export type ParamType = 'string' | 'number';
 export type ParamValue = string | number;
 export type WidgetAlias = 'ct' | 'st' | 'sm' | 'rs';
+export type PositionX = 'left' | 'center' | 'right';
+export type PositionY = 'top' | 'middle' | 'right';
+export type FlexPosition = 'flex-start' | 'center' | 'flex-end';
+export type FontWeight = 'normal' | 'bold' | 'bolder' | 'lighter';
+export type FontStyle = 'normal' | 'italic';
 
 export interface WidgetParam {
   type: ParamType;

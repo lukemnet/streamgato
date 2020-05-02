@@ -28,13 +28,6 @@
       "max": 59,
       "info": "0 to 59"
     },
-    "leadingZeros": {
-      "type": "string",
-      "label": "Leading zeros?",
-      "shorthand": "lz",
-      "value": "true",
-      "info": "true or false"
-    },
     "background": {
       "type": "string",
       "label": "Background color",
@@ -55,6 +48,20 @@
       "shorthand": "w",
       "value": 0,
       "info": "0 = width calculated automatically"
+    },
+    "horizontalPosition": {
+      "type": "string",
+      "label": "Horizontal position (x)",
+      "shorthand": "px",
+      "value": "center",
+      "info": "Available options: left, center, right"
+    },
+    "verticalPosition": {
+      "type": "string",
+      "label": "Vertical position (y)",
+      "shorthand": "py",
+      "value": "center",
+      "info": "Available options: top, center, bottom"
     },
     "textAlign": {
       "type": "string",
@@ -87,13 +94,13 @@
       "label": "Font style",
       "shorthand": "fs",
       "value": "",
-      "info": "Available options: normal, italic, oblique"
+      "info": "Available options: normal, italic"
     },
     "letterSpacing": {
-      "type": "string",
+      "type": "number",
       "label": "Letter spacing (px)",
       "shorthand": "ls",
-      "value": "",
+      "value": 0,
       "info": "0 = normal"
     },
     "paddingTop": {
