@@ -1,25 +1,25 @@
 import React from 'react';
+import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
+import ExternalLink from 'components/ExternalLink/ExternalLink';
 import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
+  origin: string;
   alias: string;
   params: ShorthandValues;
 }
 
-const WidgetUrl = ({ alias, params }: WidgetUrlProps) => {
-  const widgetUrl = `${window.location.protocol}//${window.location.host}/${alias}`;
+const WidgetUrl = ({ origin, alias, params }: WidgetUrlProps) => {
+  const widgetUrl = getWidgetUrl({ origin, alias, params });
 
   return (
-    <div style={{ overflow: "hidden" }}>
-      <h2>Widget URL ({alias})</h2>
-      <div>
-        <a href={widgetUrl} target="_blank" rel="noopener noreferrer">{widgetUrl}</a>
-      </div>
-      <div>
-        {JSON.stringify(params)}
-      </div>
-    </div>
+    <ExternalLink
+      href={widgetUrl}
+      newWindow={true}
+    >
+      {widgetUrl}
+    </ExternalLink>
   );
-}
+};
 
 export default WidgetUrl;

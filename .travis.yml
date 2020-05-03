@@ -17,6 +17,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
+  - npm run lint
   - npm test
   - npm run build
   - codecov

@@ -49,6 +49,20 @@
       "value": 0,
       "info": "0 = width calculated automatically"
     },
+    "horizontalPosition": {
+      "type": "string",
+      "label": "Horizontal position (x)",
+      "shorthand": "px",
+      "value": "center",
+      "info": "Available options: left, center, right"
+    },
+    "verticalPosition": {
+      "type": "string",
+      "label": "Vertical position (y)",
+      "shorthand": "py",
+      "value": "center",
+      "info": "Available options: top, center, bottom"
+    },
     "textAlign": {
       "type": "string",
       "label": "Text align",
@@ -79,14 +93,14 @@
       "type": "string",
       "label": "Font style",
       "shorthand": "fs",
-      "value": "",
-      "info": "Available options: normal, italic, oblique"
+      "value": "normal",
+      "info": "Available options: normal, italic"
     },
     "letterSpacing": {
-      "type": "string",
+      "type": "number",
       "label": "Letter spacing (px)",
       "shorthand": "ls",
-      "value": "",
+      "value": 0,
       "info": "0 = normal"
     },
     "paddingTop": {
@@ -114,6 +128,126 @@
       "type": "number",
       "label": "Right padding (px)",
       "shorthand": "pr",
+      "value": 0,
+      "min": 0
+    },
+    "borderTopSize": {
+      "type": "number",
+      "label": "Border top size (px)",
+      "shorthand": "btz",
+      "value": 0,
+      "min": 0
+    },
+    "borderTopStyle": {
+      "type": "string",
+      "label": "Border top style",
+      "shorthand": "bts",
+      "value": "none",
+      "min": 0,
+      "info": "Available options: dotted, dashed, solid, double, groove, ridge, inset, outset, none"
+    },
+    "borderTopColor": {
+      "type": "string",
+      "label": "Border top color",
+      "shorthand": "btc",
+      "value": "",
+      "min": 0,
+      "info": "Hex, RGB or RGBA"
+    },
+    "borderBottomSize": {
+      "type": "number",
+      "label": "Border bottom size (px)",
+      "shorthand": "bbz",
+      "value": 0,
+      "min": 0
+    },
+    "borderBottomStyle": {
+      "type": "string",
+      "label": "Border bottom style",
+      "shorthand": "bbs",
+      "value": "none",
+      "min": 0,
+      "info": "Available options: dotted, dashed, solid, double, groove, ridge, inset, outset, none"
+    },
+    "borderBottomColor": {
+      "type": "string",
+      "label": "Border bottom color",
+      "shorthand": "bbc",
+      "value": "",
+      "min": 0,
+      "info": "Hex, RGB or RGBA"
+    },
+    "borderLeftSize": {
+      "type": "number",
+      "label": "Border left size (px)",
+      "shorthand": "blz",
+      "value": 0,
+      "min": 0
+    },
+    "borderLeftStyle": {
+      "type": "string",
+      "label": "Border left style",
+      "shorthand": "bls",
+      "value": "",
+      "min": 0,
+      "info": "Available options: dotted, dashed, solid, double, groove, ridge, inset, outset, none"
+    },
+    "borderLeftColor": {
+      "type": "string",
+      "label": "Border left color",
+      "shorthand": "blc",
+      "value": "",
+      "min": 0,
+      "info": "Hex, RGB or RGBA"
+    },
+    "borderRightSize": {
+      "type": "number",
+      "label": "Border right size (px)",
+      "shorthand": "brz",
+      "value": 0,
+      "min": 0
+    },
+    "borderRightStyle": {
+      "type": "string",
+      "label": "Border right style",
+      "shorthand": "brs",
+      "value": "",
+      "min": 0,
+      "info": "Available options: dotted, dashed, solid, double, groove, ridge, inset, outset, none"
+    },
+    "borderRightColor": {
+      "type": "string",
+      "label": "Border right color",
+      "shorthand": "brc",
+      "value": "",
+      "min": 0,
+      "info": "Hex, RGB or RGBA"
+    },
+    "radiusTop": {
+      "type": "number",
+      "label": "Corner radius top-left (px)",
+      "shorthand": "rtl",
+      "value": 0,
+      "min": 0
+    },
+    "radiusBottom": {
+      "type": "number",
+      "label": "Corner radius top-right (px)",
+      "shorthand": "rtr",
+      "value": 0,
+      "min": 0
+    },
+    "radiusLeft": {
+      "type": "number",
+      "label": "Corner radius bottom-left (px)",
+      "shorthand": "rbl",
+      "value": 0,
+      "min": 0
+    },
+    "radiusRight": {
+      "type": "number",
+      "label": "Corner radius bottom-right (px)",
+      "shorthand": "rbr",
       "value": 0,
       "min": 0
     },

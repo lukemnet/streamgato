@@ -16,7 +16,7 @@ const App = () => (
     <Switch>
       <Route
         exact
-        path="/"
+        path='/'
       >
         <IndexPage />
       </Route>

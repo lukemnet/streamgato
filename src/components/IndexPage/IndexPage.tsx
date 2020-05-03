@@ -15,15 +15,15 @@ const IndexPage = () => (
       <Row>
         <Col>
           <ul>
-          <WidgetList>
-            {widget => (
-              <li>
-                <Link to={widget.route}>
-                  {widget.name}
-                </Link>
-              </li>
-            )}
-          </WidgetList>
+            <WidgetList>
+              {widget => (
+                <li>
+                  <Link to={widget.route}>
+                    {widget.name}
+                  </Link>
+                </li>
+              )}
+            </WidgetList>
           </ul>
         </Col>
       </Row>

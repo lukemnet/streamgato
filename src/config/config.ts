@@ -5,6 +5,10 @@ import socialMediaWidget from './widgets/socialMediaWidget.json';
 import lastfmRecentSong from './widgets/lastfmRecentSong.json';
 import { Widget } from 'types';
 
+const widgetOrigin =
+  process.env.REACT_APP_WIDGET_ORIGIN
+  || 'http://localhost:3000';
+
 const widgets = [
   countdownTimer,
   streamTimer,
@@ -12,7 +16,12 @@ const widgets = [
   lastfmRecentSong,
 ] as Widget[];
 
-export { 
-  metadata,
+const siteMetadata = {
+  widgetOrigin,
+  ...metadata,
+};
+
+export {
+  siteMetadata as metadata,
   widgets,
 };

@@ -9,6 +9,6 @@ const testedElement = () => (
   </Router>
 );
 
-it('should render correctly', () => {
+it('renders correctly', () => {
   domRender(testedElement);
 });

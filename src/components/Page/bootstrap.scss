@@ -3,3 +3,30 @@
 input:focus::placeholder {
   color: transparent;
 }
+
+@media screen and (min-width: 768px) {
+  .fixed-right {
+    position: fixed;
+    right: 0;
+  }
+}
+
+input[disabled],
+button[disabled] {
+  cursor: not-allowed;
+  user-select: none;
+  opacity: 0.65;
+}
+
+button[disabled][readonly] {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+.form-control[readonly] {
+  background: #fff;
+
+  &[disabled] {
+    background: #e9ecef;
+  }
+}

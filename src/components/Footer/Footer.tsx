@@ -7,7 +7,7 @@ const cx = classnames.bind(styles);
 
 const Footer = () => (
   <div className={cx('Footer')}>
-    <Container fluid="md">
+    <Container fluid='md'>
       <Row>
         <Col>
           <p>Footer</p>

@@ -7,9 +7,9 @@ interface WidgetProps {
 }
 
 const Widget = ({ alias, params }: WidgetProps) => (
-  <div style={{ overflow: "hidden" }}>
+  <div style={{ overflow: 'hidden' }}>
     <h2>Widget preview ({alias})</h2>
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: 'hidden' }}>
       {JSON.stringify(params)}
     </div>
   </div>

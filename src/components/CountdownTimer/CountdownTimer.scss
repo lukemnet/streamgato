@@ -1,0 +1,17 @@
+body {
+  background-color: transparent;
+}
+
+.widgetWrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  .countdownTimer {
+    display: inline-block;
+
+    .separator:after {
+      content: ":";
+    }
+  }
+}

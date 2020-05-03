@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap'; 
+import { Container, Row, Col } from 'react-bootstrap';
 import Page from 'components/Page/Page';
 
 const Error404 = () => (
@@ -17,6 +17,6 @@ const Error404 = () => (
       </Row>
     </Container>
   </Page>
-  );
+);
 
 export default Error404;

@@ -15,4 +15,4 @@ const defaultSettings = {
 
 it('should compute settings correctly', () => {
   expect(getComputedSettings(testSettings, defaultSettings)).toMatchSnapshot();
-})
+});

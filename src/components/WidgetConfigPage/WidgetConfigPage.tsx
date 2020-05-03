@@ -5,10 +5,11 @@ import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
 import WidgetPreview from 'components/WidgetPreview/WidgetPreview';
-import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
+import WidgetUrlSection from 'components/WidgetUrlSection/WidgetUrlSection';
 import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
 import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
+import { metadata } from 'config/config';
 import { Widget } from 'types';
 
 interface WidgetConfigPageProps {
@@ -30,6 +31,7 @@ const WidgetConfigPage = ({
   const configValues = Object.values(settings);
   const shorthandSettings = getShorthandValues(configValues);
   const computedSettings = getComputedSettings(shorthandSettings, defaultSettings);
+  const { widgetOrigin } = metadata;
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -43,14 +45,14 @@ const WidgetConfigPage = ({
           : value,
       },
     });
-  }
+  };
 
   return (
     <Page
       className={cx(className)}
       title={name}
     >
-      <Container fluid="lg">
+      <Container fluid='lg'>
         <Row>
           <Col>
             <h1>{name}</h1>
@@ -70,12 +72,14 @@ const WidgetConfigPage = ({
           <Col
             sm={12}
             md={6}
+            className='fixed-right'
           >
             <WidgetPreview
               alias={alias}
               params={computedSettings}
             />
-            <WidgetUrl
+            <WidgetUrlSection
+              origin={widgetOrigin}
               alias={alias}
               params={computedSettings}
             />
@@ -89,6 +93,6 @@ const WidgetConfigPage = ({
       </Container>
     </Page>
   );
-}
+};
 
 export default WidgetConfigPage;
