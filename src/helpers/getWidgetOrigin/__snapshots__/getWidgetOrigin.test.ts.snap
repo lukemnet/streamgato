@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns correct widget origin for a production URL 1`] = `"http://localhost:3000"`;
+
+exports[`returns correct widget origin for a production URL 2`] = `"http://streamgato.lukem.net"`;
+
+exports[`returns correct widget origin for a production URL 3`] = `"http://test.netlify.app"`;
+
+exports[`returns correct widget origin for a production URL 4`] = `"http://streamgato.com"`;
+
+exports[`returns correct widget origin for a production URL 5`] = `"http://www.streamgato.com"`;
+
+exports[`returns correct widget origin for a production URL 6`] = `"http://strmgt.com"`;
+
+exports[`returns correct widget origin for a production URL 7`] = `"http://www.strmgt.com"`;
