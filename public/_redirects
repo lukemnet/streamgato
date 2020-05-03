@@ -1,8 +1,9 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://streamgato.netlify.com/*  https://www.streamgato.com/:splat 301!
-https://streamgato.netlify.app/*  https://www.streamgato.com/:splat 301!
-https://streamgato.lukem.net/*    https://www.streamgato.com/:splat 301!
-https://streamgato.com/*          https://www.streamgato.com/:splat 301!
-/*                                /index.html   200
+https://streamgato.netlify.com/*      https://www.streamgato.com/:splat             301!
+https://streamgato.netlify.app/*      https://www.streamgato.com/:splat             301!
+https://streamgato.lukem.net/*        https://www.streamgato.com/:splat             301!
+https://streamgato.com/*              https://www.streamgato.com/:splat             301!
+https://strmgt.com/countdowntimer     https://www.streamgato.com/countdowntimer     301!
+https://strmgt.com/streamtimer        https://www.streamgato.com/streamtimer        301!
+https://strmgt.com/socialmediawidget  https://www.streamgato.com/socialmediawidget  301!
+https://strmgt.com/lastfmrecentsong   https://www.streamgato.com/lastfmrecentsong   301!
+/*                                    /index.html                                   200
