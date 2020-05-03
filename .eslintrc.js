@@ -11,6 +11,7 @@ module.exports = {
     "no-trailing-spaces": ["error"],
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     "semi": ["error", "always"],
-    "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "always" }]
+    "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "always" }],
+    "react/jsx-closing-bracket-location": [1, "tag-aligned"]
   },
 };
