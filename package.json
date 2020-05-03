@@ -20,6 +20,7 @@
     "react-bootstrap": "1.0.1",
     "react-compound-timer": "1.2.0",
     "react-dom": "16.13.1",
+    "react-icons": "3.10.0",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.1",
     "typescript": "3.8.3"
@@ -40,15 +41,49 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "quotes": ["error", "single", { "avoidEscape": true }],
-      "jsx-quotes": ["error", "prefer-single"],
-      "indent": ["error", 2],
-      "no-console": ["error"],
-      "eol-last": ["error", "always"],
-      "no-trailing-spaces": ["error"],
-      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-      "semi": ["error", "always"],
-      "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "always" }]
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "no-console": [
+        "error"
+      ],
+      "eol-last": [
+        "error",
+        "always"
+      ],
+      "no-trailing-spaces": [
+        "error"
+      ],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 1,
+          "maxEOF": 0
+        }
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "react/jsx-max-props-per-line": [
+        "error",
+        {
+          "maximum": 1,
+          "when": "always"
+        }
+      ]
     }
   },
   "browserslist": {
