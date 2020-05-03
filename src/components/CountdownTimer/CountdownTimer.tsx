@@ -158,7 +158,8 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
       {cs && (
         <link
           rel='stylesheet'
-          href={stylesheetUrl as string} />
+          href={stylesheetUrl as string}
+        />
       )}
       <div
         className='widgetWrapper'
