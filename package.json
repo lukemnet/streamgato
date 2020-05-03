@@ -85,7 +85,7 @@
         }
       ],
       "jsx-closing-bracket-location": [
-        1,
+        "error",
         "tag-aligned"
       ]
     }
