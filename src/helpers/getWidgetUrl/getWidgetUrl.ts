@@ -14,9 +14,7 @@ const getWidgetUrl = ({
   params,
 }: GetWidgetUrlParams) => {
   const widgetOrigin = getWidgetOrigin(origin);
-  const urlParams = params
-    ? constructURLparams(params)
-    : undefined;
+  const urlParams = constructURLparams(params);
   return `${widgetOrigin}/${alias}${urlParams}`;
 };
 
