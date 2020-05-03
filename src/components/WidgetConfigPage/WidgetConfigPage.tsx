@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import cx from 'classnames';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Container from 'components/Container/Container';
 import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
@@ -52,7 +53,7 @@ const WidgetConfigPage = ({
       className={cx(className)}
       title={name}
     >
-      <Container fluid='lg'>
+      <Container>
         <Row>
           <Col>
             <h1>{name}</h1>

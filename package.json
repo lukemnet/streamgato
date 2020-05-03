@@ -83,6 +83,10 @@
           "maximum": 1,
           "when": "always"
         }
+      ],
+      "jsx-closing-bracket-location": [
+        1,
+        "tag-aligned"
       ]
     }
   },

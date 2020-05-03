@@ -8,14 +8,19 @@ import { WidgetAlias, WidgetComponent } from 'types';
 
 interface WidgetPageProps {
   alias: WidgetAlias;
+  configRoute: string;
 }
 
 interface WidgetListObject {
   [key: string]: WidgetComponent;
 }
 
-const WidgetPage = ({ alias }: WidgetPageProps) => {
+const WidgetPage = ({ alias, configRoute }: WidgetPageProps) => {
   const params = getURLparams();
+
+  if (Object.keys(params).length <= 0)
+    window.location.replace(`${window.location.origin}${configRoute}`);
+
   const widgets = {
     ct: <CountdownTimer params={params} />,
     st: <StreamTimer params={params} />,
