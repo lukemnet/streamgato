@@ -8,6 +8,7 @@ Object {
       "netlify",
       "lukem.net",
     ],
+    "prodOrigin": "https://www.streamgato.com",
     "title": "StreamGato",
     "widgetOrigin": "http://localhost:3000",
   },

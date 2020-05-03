@@ -4,5 +4,6 @@
     "localhost",
     "netlify",
     "lukem.net"
-  ]
+  ],
+  "prodOrigin": "https://www.streamgato.com"
 }
