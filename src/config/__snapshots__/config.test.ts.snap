@@ -3,6 +3,11 @@
 exports[`should match snapshot 1`] = `
 Object {
   "metadata": Object {
+    "previewUrlComponents": Array [
+      "localhost",
+      "netlify",
+      "lukem.net",
+    ],
     "title": "StreamGato",
     "widgetOrigin": "http://localhost:3000",
   },

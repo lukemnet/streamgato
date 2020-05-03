@@ -1,12 +1,10 @@
 import isItPreviewUrl from 'helpers/isItPreviewUrl/isItPreviewUrl';
 
-const getWidgetOrigin = (origin?: string) => {
-  const widgetOrigin = origin
-    ? origin
-    : window.location.origin;
+const getWidgetOrigin = (origin: string) => {
+  const siteUrl = window.location.origin;
 
-  return isItPreviewUrl(widgetOrigin)
-    ? window.location.origin
+  return isItPreviewUrl(siteUrl)
+    ? siteUrl
     : origin;
 };
 

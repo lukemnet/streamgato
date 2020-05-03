@@ -1,5 +1,8 @@
-const isItPreviewUrl = (origin: string) =>
-  origin.includes('netlify')
-  || origin.includes('lukem.net');
+import { metadata } from 'config/config';
+
+const isItPreviewUrl = (url: string) =>
+  metadata.previewUrlComponents.some(urlComponent =>
+    url.includes(urlComponent) || false
+  );
 
 export default isItPreviewUrl;

@@ -5,14 +5,15 @@ import { ShorthandValues } from 'types';
 interface GetWidgetUrlParams {
   origin: string;
   alias: string;
-  params: ShorthandValues;
+  params?: ShorthandValues;
 }
 
 const getWidgetUrl = ({
   origin,
   alias,
   params,
-}: Partial<GetWidgetUrlParams>) => {
+}: GetWidgetUrlParams) => {
+  console.log(process.env.NODE_ENV) // eslint-disable-line
   const widgetOrigin = getWidgetOrigin(origin);
   const urlParams = params
     ? constructURLparams(params)

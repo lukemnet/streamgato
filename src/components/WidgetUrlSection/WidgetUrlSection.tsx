@@ -1,8 +1,9 @@
-import React, { FocusEvent } from 'react';
+import React from 'react';
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 // import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
 import { FaCopy } from 'react-icons/fa';
 import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
+import selectInputText from 'helpers/selectInputText/selectInputText';
 import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
@@ -15,9 +16,6 @@ const WidgetUrlSection = (props: WidgetUrlProps) => {
   const { origin, alias, params } = props;
   const widgetUrl = getWidgetUrl({ origin, alias, params });
   const emptyParams = params && Object.keys(params).length <= 0;
-  const onFocus =  (e: FocusEvent<HTMLInputElement>) => {
-    e.target.select();
-  };
 
   return (
     <div>
@@ -31,7 +29,7 @@ const WidgetUrlSection = (props: WidgetUrlProps) => {
             }}
             readOnly
             value={widgetUrl}
-            onFocus={onFocus}
+            onFocus={selectInputText}
             aria-label='Widget URL'
           />
           <InputGroup.Append>
