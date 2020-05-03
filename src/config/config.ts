@@ -7,7 +7,7 @@ import { Widget } from 'types';
 
 const widgetOrigin =
   process.env.REACT_APP_WIDGET_ORIGIN
-  || window.location.origin;
+  || 'http://localhost:3000';
 
 const widgets = [
   countdownTimer,
