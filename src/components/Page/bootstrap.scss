@@ -1,47 +1,40 @@
-@import '~bootstrap/scss/bootstrap.scss';
+// @import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// @import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+// @import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+// @import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+// @import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+// @import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+// @import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/card";
+// @import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/jumbotron";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/media";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/toasts";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+// @import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/utilities";
+// @import "~bootstrap/scss/print";
 
-@function get-breakpoints($key: "md") {
-  @return map-get($container-max-widths, $key);
-}
-
-input:focus::placeholder {
-  color: transparent;
-}
-
-@media screen and (min-width: 768px) {
-  .col-md-6 {
-    &.fixed-right {
-      position: fixed;
-      left: 50%;
-    }
-  }
-
-  .container-xl {
-    .fixed-right {
-      &.col-md-6 {
-        width: 50%;
-        max-width: calc(#{get-breakpoints("xl")} / 2);
-      }
-    }
-  }
-}
-
-input[disabled],
-button[disabled] {
-  cursor: not-allowed;
-  user-select: none;
-  opacity: 0.65;
-}
-
-button[disabled][readonly] {
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-}
-
-.form-control[readonly] {
-  background: #fff;
-
-  &[disabled] {
-    background: #e9ecef;
-  }
-}
+@import './bootstrap-patches';
