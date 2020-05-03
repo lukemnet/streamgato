@@ -13,7 +13,6 @@ const getWidgetUrl = ({
   alias,
   params,
 }: GetWidgetUrlParams) => {
-  console.log(process.env.NODE_ENV) // eslint-disable-line
   const widgetOrigin = getWidgetOrigin(origin);
   const urlParams = params
     ? constructURLparams(params)
