@@ -16,6 +16,9 @@ interface WidgetListObject {
 
 const WidgetPage = ({ alias }: WidgetPageProps) => {
   const params = getURLparams();
+
+  // if (Object.keys(params).length <= 0) window.location.replace(`/${alias}`);
+
   const widgets = {
     ct: <CountdownTimer params={params} />,
     st: <StreamTimer params={params} />,
