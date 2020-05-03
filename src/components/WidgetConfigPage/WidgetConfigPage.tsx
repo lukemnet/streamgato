@@ -9,6 +9,7 @@ import WidgetUrlSection from 'components/WidgetUrlSection/WidgetUrlSection';
 import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
 import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
+import { metadata } from 'config/config';
 import { Widget } from 'types';
 
 interface WidgetConfigPageProps {
@@ -30,6 +31,7 @@ const WidgetConfigPage = ({
   const configValues = Object.values(settings);
   const shorthandSettings = getShorthandValues(configValues);
   const computedSettings = getComputedSettings(shorthandSettings, defaultSettings);
+  const { widgetOrigin } = metadata;
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -77,6 +79,7 @@ const WidgetConfigPage = ({
               params={computedSettings}
             />
             <WidgetUrlSection
+              origin={widgetOrigin}
               alias={alias}
               params={computedSettings}
             />

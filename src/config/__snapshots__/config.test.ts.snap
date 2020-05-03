@@ -4,6 +4,7 @@ exports[`should match snapshot 1`] = `
 Object {
   "metadata": Object {
     "title": "StreamGato",
+    "widgetOrigin": "http://localhost:3000",
   },
   "widgets": Array [
     Object {

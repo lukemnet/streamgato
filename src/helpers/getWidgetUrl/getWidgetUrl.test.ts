@@ -1,6 +1,7 @@
 import getWidgetUrl from './getWidgetUrl';
 
 const testParams = {
+  origin: 'http://example.org',
   alias: 'sm',
   params: {
     h: 1,
@@ -10,5 +11,6 @@ const testParams = {
 };
 
 it('should construct widget URL', () => {
-  expect(getWidgetUrl(testParams.alias, testParams.params)).toMatchSnapshot();
+  const { origin, alias, params } = testParams;
+  expect(getWidgetUrl({ origin, alias, params })).toMatchSnapshot();
 });

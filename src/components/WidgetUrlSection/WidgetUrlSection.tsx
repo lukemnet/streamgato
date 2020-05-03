@@ -6,13 +6,14 @@ import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
 import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
+  origin: string;
   alias: string;
   params: ShorthandValues;
 }
 
 const WidgetUrlSection = (props: WidgetUrlProps) => {
-  const { alias, params } = props;
-  const widgetUrl = getWidgetUrl(alias, params);
+  const { origin, alias, params } = props;
+  const widgetUrl = getWidgetUrl({ origin, alias, params });
   const emptyParams = params && Object.keys(params).length <= 0;
   const onFocus =  (e: FocusEvent<HTMLInputElement>) => {
     e.target.select();
