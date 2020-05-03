@@ -34,10 +34,7 @@ const App = () => (
           path={`/${widget.alias}`}
           key={widget.alias}
         >
-          <WidgetPage
-            alias={widget.alias}
-            configRoute={widget.route}
-          />
+          <WidgetPage alias={widget.alias} />
         </Route>
       ))}
       <Route component={Error404} />
