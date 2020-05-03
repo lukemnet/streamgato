@@ -2,12 +2,12 @@
 
 # Optional: Redirect default Netlify subdomain to primary domain
 https://www.strmgt.com            https://strmgt.com
-https://strmgt.com/ct             https://www.streamgato.com/countdowntimer
-https://strmgt.com/st             https://www.streamgato.com/streamtimer
-https://strmgt.com/sm             https://www.streamgato.com/socialmediawidget
-https://strmgt.com/rs             https://www.streamgato.com/lastfmrecentsong
 https://streamgato.netlify.com/*  https://www.streamgato.com/:splat 301!
 https://streamgato.netlify.app/*  https://www.streamgato.com/:splat 301!
 https://streamgato.lukem.net/*    https://www.streamgato.com/:splat 301!
 https://streamgato.com/*          https://www.streamgato.com/:splat 301!
+https://strmgt.com/ct             https://www.streamgato.com/countdowntimer
+https://strmgt.com/st             https://www.streamgato.com/streamtimer
+https://strmgt.com/sm             https://www.streamgato.com/socialmediawidget
+https://strmgt.com/rs             https://www.streamgato.com/lastfmrecentsong
 /*                                /index.html   200
