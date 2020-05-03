@@ -1,13 +1,28 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+@function get-breakpoints($key: "md") {
+  @return map-get($container-max-widths, $key);
+}
+
 input:focus::placeholder {
   color: transparent;
 }
 
 @media screen and (min-width: 768px) {
-  .fixed-right {
-    position: fixed;
-    right: 0;
+  .col-md-6 {
+    &.fixed-right {
+      position: fixed;
+      left: 50%;
+    }
+  }
+
+  .container-xl {
+    .fixed-right {
+      &.col-md-6 {
+        width: 50%;
+        max-width: calc(#{get-breakpoints("xl")} / 2);
+      }
+    }
   }
 }
 

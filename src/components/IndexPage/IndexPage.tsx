@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Container from 'components/Container/Container';
 import Page from 'components/Page/Page';
 import WidgetList from 'components/WidgetList/WidgetList';
 

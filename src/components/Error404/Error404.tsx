@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Container from 'components/Container/Container';
 import Page from 'components/Page/Page';
 
 const Error404 = () => (

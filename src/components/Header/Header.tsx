@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Row, Col } from 'react-bootstrap';
+import Container from 'components/Container/Container';
 import SiteLogo from 'components/SiteLogo/SiteLogo';
 import SiteMenu from 'components/SiteMenu/SiteMenu';
 
@@ -9,7 +10,7 @@ const Header = () => (
     bg='dark'
     variant='dark'
   >
-    <Container fluid='xl'>
+    <Container>
       <Row>
         <Col
           xs={12}
