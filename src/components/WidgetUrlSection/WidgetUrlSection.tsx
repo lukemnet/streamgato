@@ -16,8 +16,8 @@ interface WidgetUrlProps {
 }
 
 const WidgetUrlSection = (props: WidgetUrlProps) => {
-  const { origin, alias, params } = props;
-  const widgetUrl = getWidgetUrl({ origin, alias, params });
+  const { params } = props;
+  const widgetUrl = getWidgetUrl(props);
   const disabled = params && Object.keys(params).length <= 0;
   const [ copied, setCopied ] = useState(false);
   const onCopy = () => !disabled && setCopied(true);
@@ -37,7 +37,9 @@ const WidgetUrlSection = (props: WidgetUrlProps) => {
         >
           <InputGroup
             className='mb-3'
-            {...disabled && { title: 'Configure widget first!' }}
+            {...disabled && {
+              title: 'Configure widget first!',
+            }}
           >
             <FormControl
               disabled={disabled}
@@ -50,7 +52,7 @@ const WidgetUrlSection = (props: WidgetUrlProps) => {
               <CopyToClipboardButton
                 {...{
                   disabled,
-                  copied
+                  copied,
                 }}
               />
             </InputGroup.Append>
