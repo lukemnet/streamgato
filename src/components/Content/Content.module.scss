@@ -1,0 +1,10 @@
+.Content {
+  padding-top: 96px;
+  flex: 1 0 auto;
+}
+
+@media screen and (min-width: 576px) {
+  .Content {
+    padding-top: 56px;
+  }
+}

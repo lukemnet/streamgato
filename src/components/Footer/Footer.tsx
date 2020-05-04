@@ -7,7 +7,7 @@ import styles from './Footer.module.scss';
 const cx = classnames.bind(styles);
 
 const Footer = () => (
-  <div className={cx('Footer')}>
+  <footer className={cx('Footer', 'mt-3')}>
     <Container>
       <Row>
         <Col>
@@ -15,7 +15,7 @@ const Footer = () => (
         </Col>
       </Row>
     </Container>
-  </div>
+  </footer>
 );
 
 export default Footer;

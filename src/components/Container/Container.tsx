@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { Container as BootstrapContainer } from 'react-bootstrap';
 
 interface ContainerProps {
+  className?: string;
   children: ReactElement | ReactElement[];
 }
 
