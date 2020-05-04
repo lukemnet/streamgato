@@ -4,6 +4,7 @@ import CountdownTimer from 'components/CountdownTimer/CountdownTimer';
 import StreamTimer from 'components/StreamTimer/StreamTimer';
 import SocialMediaWidget from 'components/SocialMediaWidget/SocialMediaWidget';
 import LastFmRecentSong from 'components/LastFmRecentSong/LastFmRecentSong';
+import paramsEmpty from 'helpers/paramsEmpty/paramsEmpty';
 import { WidgetAlias, WidgetComponent } from 'types';
 
 interface WidgetPageProps {
@@ -18,7 +19,7 @@ interface WidgetListObject {
 const WidgetPage = ({ alias, configRoute }: WidgetPageProps) => {
   const params = getURLparams();
 
-  if (Object.keys(params).length <= 0)
+  if (paramsEmpty(params))
     window.location.replace(configRoute);
 
   const widgets = {

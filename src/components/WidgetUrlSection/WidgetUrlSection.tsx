@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 import CopyToClipboardWrapper from 'components/CopyToClipboardWrapper/CopyToClipboardWrapper';
 import CopyToClipboardButton from 'components/CopyToClipboardButton/CopyToClipboardButton';
+import areParamsEmpty from 'helpers/paramsEmpty/paramsEmpty';
 import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
 import selectInputText from 'helpers/selectInputText/selectInputText';
 import { ShorthandValues } from 'types';
@@ -18,7 +19,7 @@ interface WidgetUrlProps {
 const WidgetUrlSection = (props: WidgetUrlProps) => {
   const { params } = props;
   const widgetUrl = getWidgetUrl(props);
-  const disabled = params && Object.keys(params).length <= 0;
+  const disabled = areParamsEmpty(params);
   const [ copied, setCopied ] = useState(false);
   const onCopy = () => !disabled && setCopied(true);
 
