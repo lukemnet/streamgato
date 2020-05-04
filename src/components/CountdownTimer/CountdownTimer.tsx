@@ -174,6 +174,7 @@ const CountdownTimer = ({ params }: CountdownTimerProps) => {
             lastUnit='h'
             direction='backward'
             formatValue={addLeadingZeros}
+            timeToUpdate={999}
           >
             {() => (
               <>

@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should convert numbers to miliseconds 1`] = `5000.9`;
+exports[`should convert numbers to miliseconds 1`] = `5000`;
 
-exports[`should convert numbers to miliseconds 2`] = `945000.9`;
+exports[`should convert numbers to miliseconds 2`] = `945000`;
 
-exports[`should convert numbers to miliseconds 3`] = `17722000.9`;
+exports[`should convert numbers to miliseconds 3`] = `17722000`;
 
-exports[`should convert numbers to miliseconds 4`] = `176756000.9`;
+exports[`should convert numbers to miliseconds 4`] = `176756000`;
 
-exports[`should convert numbers to miliseconds 5`] = `79243000.9`;
+exports[`should convert numbers to miliseconds 5`] = `79243000`;
 
-exports[`should convert numbers to miliseconds 6`] = `35340000.9`;
+exports[`should convert numbers to miliseconds 6`] = `35340000`;
