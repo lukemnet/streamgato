@@ -24,7 +24,10 @@ const CopiedValue = () => (
 const defaultTitle = 'Configure widget first!';
 const readyToCopyTitle = 'Copy widget URL';
 
-const CopyToClipboardButton = ({ disabled, copied }: CopyToClipboardButtonProps) => (
+const CopyToClipboardButton = ({
+  disabled,
+  copied,
+}: CopyToClipboardButtonProps) => (
   <Button
     {...disabled && {
       disabled,

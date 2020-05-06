@@ -9,19 +9,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .WidgetConfigPage {
-    .order-md-2 {
-      width: calc(100vw - 45px);
-      position: fixed;
-    }
-
-    .top {
-      height: auto;
-    }
-  }
-}
-
 @media screen and (min-width: 768px) {
   .WidgetConfigPage {
     .preview {

@@ -59,16 +59,16 @@ const WidgetConfigPage = ({
       <Container>
         <Row className={cx('heading')}>
           <Col>
-            <h1 className='mt-1'>{name}</h1>
+            <h1 className='mt-2'>{name}</h1>
           </Col>
         </Row>
         <Row>
           <Col
             sm={12}
             md={{ span: 6, order: 2 }}
-            className={cx('fixed-right', 'sticky-top', 'preview', 'shadow')}
+            className={cx('fixed-right', 'sticky-top', 'preview', 'shadow', 'pt-3', 'pb-3')}
           >
-            <div className={cx('top', 'mt-3')}>
+            <div className={cx('top')}>
               <WidgetPreview
                 alias={alias}
                 params={computedSettings}

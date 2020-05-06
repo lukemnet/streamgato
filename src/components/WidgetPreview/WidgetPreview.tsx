@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames/bind';
+import { Card } from 'react-bootstrap';
 import { ShorthandValues } from 'types';
 import styles from './WidgetPreview.module.scss';
 
@@ -11,12 +12,12 @@ interface WidgetProps {
 const cx = classnames.bind(styles);
 
 const WidgetPreview = ({ alias, params }: WidgetProps) => (
-  <div className={cx('WidgetPreview', 'mt-1', 'mb-3')}>
-    <h2>Widget preview ({alias})</h2>
-    <div style={{ overflow: 'hidden' }}>
+  <Card className={cx('WidgetPreview', 'mb-3')}>
+    <Card.Header>Widget preview ({alias})</Card.Header>
+    <Card.Body>
       {JSON.stringify(params)}
-    </div>
-  </div>
+    </Card.Body>
+  </Card>
 );
 
 export default WidgetPreview;
