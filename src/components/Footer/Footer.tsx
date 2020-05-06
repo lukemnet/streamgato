@@ -7,7 +7,7 @@ import styles from './Footer.module.scss';
 const cx = classnames.bind(styles);
 
 const Footer = () => (
-  <footer className={cx('Footer', 'mt-3')}>
+  <footer className={cx('Footer')}>
     <Container>
       <Row>
         <Col>

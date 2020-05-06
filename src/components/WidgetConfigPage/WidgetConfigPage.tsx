@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import cx from 'classnames';
+import classnames from 'classnames/bind';
 import { Row, Col } from 'react-bootstrap';
 import Container from 'components/Container/Container';
 import Page from 'components/Page/Page';
@@ -12,11 +12,14 @@ import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings
 import getShorthandValues from 'helpers/getShorthandValues/getShorthandValues';
 import { metadata } from 'config/config';
 import { Widget } from 'types';
+import styles from './WidgetConfigPage.module.scss';
 
 interface WidgetConfigPageProps {
   className?: string;
   widget: Widget;
 }
+
+const cx = classnames.bind(styles);
 
 const WidgetConfigPage = ({
   className,
@@ -50,39 +53,43 @@ const WidgetConfigPage = ({
 
   return (
     <Page
-      className={cx(className)}
+      className={cx('WidgetConfigPage', className)}
       title={name}
     >
       <Container>
-        <Row>
+        <Row className={cx('heading')}>
           <Col>
-            <h1>{name}</h1>
+            <h1 className='mt-1'>{name}</h1>
           </Col>
         </Row>
         <Row>
           <Col
             sm={12}
-            md={6}
+            md={{ span: 6, order: 2 }}
+            className={cx('fixed-right', 'sticky-top', 'preview', 'shadow')}
+          >
+            <div className={cx('top', 'mt-3')}>
+              <WidgetPreview
+                alias={alias}
+                params={computedSettings}
+              />
+            </div>
+            <div className={cx('bottom')}>
+              <WidgetUrlSection
+                origin={widgetOrigin}
+                alias={alias}
+                params={computedSettings}
+              />
+            </div>
+          </Col>
+          <Col
+            sm={12}
+            md={{ span: 6, order: 1 }}
           >
             <ConfigFormSection
               alias={alias}
               params={settings}
               onChange={onChange}
-            />
-          </Col>
-          <Col
-            sm={12}
-            md={6}
-            className='fixed-right'
-          >
-            <WidgetPreview
-              alias={alias}
-              params={computedSettings}
-            />
-            <WidgetUrlSection
-              origin={widgetOrigin}
-              alias={alias}
-              params={computedSettings}
             />
           </Col>
         </Row>

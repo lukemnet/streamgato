@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classnames from 'classnames/bind';
 import {
   InputGroup,
   FormControl,
@@ -9,12 +10,15 @@ import areParamsEmpty from 'helpers/paramsEmpty/paramsEmpty';
 import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
 import selectInputText from 'helpers/selectInputText/selectInputText';
 import { ShorthandValues } from 'types';
+import styles from './WidgetUrlSection.module.scss';
 
 interface WidgetUrlProps {
   origin: string;
   alias: string;
   params: ShorthandValues;
 }
+
+const cx = classnames.bind(styles);
 
 const WidgetUrlSection = (props: WidgetUrlProps) => {
   const { params } = props;
@@ -28,7 +32,7 @@ const WidgetUrlSection = (props: WidgetUrlProps) => {
   }, [widgetUrl]);
 
   return (
-    <div>
+    <div className={cx('WidgetUrlSection')}>
       <h2>Widget URL</h2>
       <div>
         <CopyToClipboardWrapper
