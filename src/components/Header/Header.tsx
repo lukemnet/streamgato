@@ -11,6 +11,7 @@ const Header = () => (
     collapseOnSelect
     expand='sm'
     className='fixed-on-desktop-only'
+    style={{ zIndex: 1030 }}
   >
     <Container>
       <SiteLogo />

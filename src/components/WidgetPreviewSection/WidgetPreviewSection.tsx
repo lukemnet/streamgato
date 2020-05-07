@@ -14,7 +14,7 @@ const cx = classnames.bind(styles);
 
 const WidgetPreviewSection = ({ alias, params }: WidgetPreviewSectionProps) => (
   <Card className={cx('WidgetPreviewSection', 'mb-3')}>
-    <Card.Header>Widget preview ({alias})</Card.Header>
+    <Card.Header>Widget preview</Card.Header>
     <Card.Body className={cx('p-0')}>
       <WidgetPreview
         alias={alias}
