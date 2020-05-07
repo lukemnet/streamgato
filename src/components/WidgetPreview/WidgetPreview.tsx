@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import classnames from 'classnames/bind';
 import WidgetsWithRefs from 'components/WidgetsWithRefs/WidgetsWithRefs';
-import { ShorthandValues } from 'types';
+import { WidgetAlias, ShorthandValues } from 'types';
 import convertToMiliseconds from 'helpers/convertToMiliseconds/convertToMiliseconds';
 import styles from './WidgetPreview.module.scss';
 
 interface WidgetPreviewProps {
-  alias: string;
+  alias: WidgetAlias;
   params: ShorthandValues;
 }
 

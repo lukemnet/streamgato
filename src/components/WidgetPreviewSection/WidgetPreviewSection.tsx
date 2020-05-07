@@ -1,12 +1,12 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 import { Card } from 'react-bootstrap';
-import { ShorthandValues } from 'types';
+import { WidgetAlias, ShorthandValues } from 'types';
 import WidgetPreview from 'components/WidgetPreview/WidgetPreview';
 import styles from './WidgetPreviewSection.module.scss';
 
 interface WidgetPreviewSectionProps {
-  alias: string;
+  alias: WidgetAlias;
   params: ShorthandValues;
 }
 
