@@ -5,7 +5,7 @@ import Container from 'components/Container/Container';
 import Page from 'components/Page/Page';
 import BackToIndexLink from 'components/BackToIndexLink/BackToIndexLink';
 import ConfigFormSection from 'components/ConfigFormSection/ConfigFormSection';
-import WidgetPreview from 'components/WidgetPreview/WidgetPreview';
+import WidgetPreviewSection from 'components/WidgetPreviewSection/WidgetPreviewSection';
 import WidgetUrlSection from 'components/WidgetUrlSection/WidgetUrlSection';
 import getDefaultSettings from 'helpers/getDefaultSettings/getDefaultSettings';
 import getComputedSettings from 'helpers/getComputedSettings/getComputedSettings';
@@ -66,10 +66,10 @@ const WidgetConfigPage = ({
           <Col
             sm={12}
             md={{ span: 6, order: 2 }}
-            className={cx('fixed-right', 'sticky-top', 'preview', 'shadow', 'pt-3', 'pb-3')}
+            className={cx('fixed-right', 'sticky-top', 'preview', 'shadow', 'py-3')}
           >
             <div className={cx('top')}>
-              <WidgetPreview
+              <WidgetPreviewSection
                 alias={alias}
                 params={computedSettings}
               />

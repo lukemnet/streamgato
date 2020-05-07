@@ -1,4 +1,4 @@
-import WidgetPreview from './WidgetPreview';
+import WidgetPreviewSection from './WidgetPreviewSection';
 import domRender from 'utils/domRender';
 
 const testParams = {
@@ -11,5 +11,5 @@ const testParams = {
 };
 
 it('renders correctly', () => {
-  domRender(WidgetPreview, testParams);
+  domRender(WidgetPreviewSection, testParams);
 });
