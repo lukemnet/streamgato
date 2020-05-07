@@ -1,5 +1,6 @@
-import { ReactElement } from 'react';
+import { ReactElement, MutableRefObject } from 'react';
 
+export type Ref = MutableRefObject<any>;
 export type OnChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
 export type ParamType =
   'string'

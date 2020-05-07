@@ -1,15 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classnames from 'classnames/bind';
-import CountdownTimer from 'components/CountdownTimer/CountdownTimer';
-import StreamTimer from 'components/StreamTimer/StreamTimer';
-import SocialMediaWidget from 'components/SocialMediaWidget/SocialMediaWidget';
-import LastFmRecentSong from 'components/LastFmRecentSong/LastFmRecentSong';
+import WidgetsWithRefs from 'components/WidgetsWithRefs/WidgetsWithRefs';
 import { ShorthandValues } from 'types';
+import convertToMiliseconds from 'helpers/convertToMiliseconds/convertToMiliseconds';
 import styles from './WidgetPreview.module.scss';
-
-interface WidgetListObject {
-  [key: string]: ReactElement;
-}
 
 interface WidgetPreviewProps {
   alias: string;
@@ -19,16 +13,26 @@ interface WidgetPreviewProps {
 const cx = classnames.bind(styles);
 
 const WidgetPreview = ({ alias, params }: WidgetPreviewProps) => {
-  const widgets = {
-    ct: <CountdownTimer params={params} />,
-    st: <StreamTimer params={params} />,
-    sm: <SocialMediaWidget params={params} />,
-    rs: <LastFmRecentSong params={params} />,
-  } as WidgetListObject;
+  const ref = useRef(null);
+  const [ widgetParams, setWidgetParams ] = useState(params);
+  useEffect(() => {
+    setWidgetParams(params);
+    ((ref as any).current).setTime(convertToMiliseconds({
+      h: Number(widgetParams.h),
+      m: Number(widgetParams.m),
+      s: Number(widgetParams.s),
+    }));
+    ((ref as any).current).reset(); // eslint-disable-line
+    ((ref as any).current).start();
+  }, [widgetParams.h, widgetParams.m, widgetParams.s,  params, ref]);
 
   return (
     <div className={cx('WidgetPreview')}>
-      {widgets[alias]}
+      <WidgetsWithRefs
+        alias={alias}
+        params={widgetParams}
+        ref={ref}
+      />
     </div>
   );
 };
