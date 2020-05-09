@@ -62,7 +62,7 @@ interface FlexPositions {
 };
 
 const CountdownTimer =
-  React.forwardRef((props: any, ref) => {
+  React.forwardRef((props: CountdownTimerProps, ref) => {
     const {
       h,
       m,
@@ -99,7 +99,7 @@ const CountdownTimer =
       rtr,
       rbl,
       rbr,
-    } = props.params;
+    } = props.params || {};
 
     const flexPositionX = {
       left: 'flex-start',

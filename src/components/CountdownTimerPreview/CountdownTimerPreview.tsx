@@ -1,30 +1,31 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import CountdownTimer from 'components/CountdownTimer/CountdownTimer';
-import { ShorthandValues } from 'types';
+import { WidgetComponentProps } from 'types';
 import convertToMiliseconds from 'helpers/convertToMiliseconds/convertToMiliseconds';
 
-interface WidgetPreviewProps {
-  params: ShorthandValues;
-}
+// interface TimerElement extends HTMLDivElement {
+//   setTime: (time: number) => void;
+//   reset: () => void;
+//   start: () => void;
+//   props: {
+//     initialTime: number;
+//   };
+// }
 
-interface TimerElement extends HTMLDivElement {
-  setTime: (time: number) => void;
-  reset: () => void;
-  start: () => void;
-  props: {
-    initialTime: number;
-  };
-}
+const CountdownTimerPreview = ({ params }: WidgetComponentProps) => {
+  const ref = useRef<any>(null);
+  const [ widgetParams, setWidgetParams ] = useState(params);
 
-const CountdownTimerPreview = ({ params }: WidgetPreviewProps) => {
-  const ref = useRef<TimerElement>(null);
   useEffect(() => {
-    const timer = ref.current!;
-    const oldTime = timer.props.initialTime;
     const { h, m, s } = params as { [key:string]: number };
     const newTime = convertToMiliseconds({ h, m, s });
 
-    if (newTime !== oldTime) {
+    setWidgetParams(params);
+
+    const timer = ref.current!;
+    const oldTime = timer?.props.initialTime;
+
+    if (timer && newTime !== oldTime) {
       timer.setTime(newTime);
       timer.reset();
       timer.start();
@@ -33,7 +34,7 @@ const CountdownTimerPreview = ({ params }: WidgetPreviewProps) => {
 
   return (
     <CountdownTimer
-      params={params}
+      params={widgetParams}
       ref={ref}
     />
   );

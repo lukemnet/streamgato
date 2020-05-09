@@ -1,8 +1,7 @@
-import WidgetsWithRefs from './WidgetsWithRefs';
+import StreamTimerPreview from './StreamTimerPreview';
 import domRender from 'utils/domRender';
 
 const testParams = {
-  alias: 'st',
   params: {
     h: 1,
     m: 2,
@@ -11,5 +10,5 @@ const testParams = {
 };
 
 it('renders correctly', () => {
-  domRender(WidgetsWithRefs, testParams);
+  domRender(StreamTimerPreview, testParams);
 });

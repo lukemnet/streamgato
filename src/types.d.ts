@@ -44,6 +44,10 @@ export type BorderStyle =
   | 'outset'
   | 'none';
 
+export type WidgetListObject = {
+  [key in WidgetAlias]: GenericWidget;
+}
+
 export interface WidgetParam {
   type: ParamType;
   label: string;
@@ -73,4 +77,8 @@ export interface WidgetComponentProps {
   params: ShorthandValues;
 };
 
-export type WidgetComponent = ReactElement<ShorthandValues>;
+export interface GenericWidgetComponentProps extends WidgetComponentProps {
+  alias: WidgetAlias;
+};
+
+export type GenericWidget = ReactElement<ShorthandValues>;
