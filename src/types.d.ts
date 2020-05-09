@@ -1,6 +1,7 @@
 import { ReactElement, MutableRefObject } from 'react';
+import Timer from 'react-compound-timer';
 
-export type Ref = MutableRefObject<any>;
+export type TimerRef = MutableRefObject<Timer>;
 export type OnChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
 export type ParamType =
   'string'

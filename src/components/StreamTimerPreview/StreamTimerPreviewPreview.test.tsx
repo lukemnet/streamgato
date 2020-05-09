@@ -2,11 +2,9 @@ import StreamTimerPreview from './StreamTimerPreview';
 import domRender from 'utils/domRender';
 
 const testParams = {
-  params: {
-    h: 1,
-    m: 2,
-    s: 3,
-  }
+  col: 'red',
+  w: 12,
+  ta: 'left',
 };
 
 it('renders correctly', () => {

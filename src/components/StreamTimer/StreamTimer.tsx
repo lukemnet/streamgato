@@ -1,26 +1,17 @@
 import React from 'react';
-import { WidgetComponentProps } from 'types';
-import Timer from 'react-compound-timer';
-import addLeadingZeros from 'helpers/addLeadingZeros/addLeadingZeros';
+import GenericTimer, { GenericTimerParams } from 'components/GenericTimer/GenericTimer';
 
-const StreamTimer = ({ params }: WidgetComponentProps) => (
-  <div>
-    <p>StreamTimer</p>
-    <p>{JSON.stringify(params)}</p>
-    <Timer
-      lastUnit='h'
+interface StreamTimerProps {
+  params: Partial<GenericTimerParams>;
+}
+
+const StreamTimer =
+  React.forwardRef(({ params }: StreamTimerProps, ref) => (
+    <GenericTimer
       direction='forward'
-      formatValue={addLeadingZeros}
-    >
-      {() => (
-        <>
-          <Timer.Hours />:
-          <Timer.Minutes />:
-          <Timer.Seconds />
-        </>
-      )}
-    </Timer>
-  </div>
-);
+      params={params}
+      ref={ref}
+    />
+  ));
 
 export default StreamTimer;
