@@ -37,4 +37,68 @@
 @import "~bootstrap/scss/utilities";
 // @import "~bootstrap/scss/print";
 
-@import './bootstrap-patches';
+/*********************************************/
+/* CUSTOMIZATIONS */
+/*********************************************/
+
+@function get-breakpoints($key: "md") {
+  @return map-get($container-max-widths, $key);
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  h1, .h1 { @include font-size($h1-font-size * 0.6); }
+  h2, .h2 { @include font-size($h2-font-size * 0.6); }
+  h3, .h3 { @include font-size($h3-font-size * 0.6); }
+  h4, .h4 { @include font-size($h4-font-size * 0.6); }
+  h5, .h5 { @include font-size($h5-font-size * 0.6); }
+  h6, .h6 { @include font-size($h6-font-size * 0.6); }
+}
+
+@media screen and (min-width: 768px) {
+  .col-md-6 {
+    &.fixed-right {
+      position: fixed;
+      left: 50%;
+    }
+  }
+
+  .container-xl {
+    .fixed-right {
+      &.col-md-6 {
+        width: 50%;
+        max-width: calc(#{get-breakpoints("xl")} / 2);
+      }
+    }
+  }
+
+  .fixed-on-desktop-only {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+input[disabled],
+button[disabled] {
+  cursor: not-allowed;
+  user-select: none;
+  opacity: 0.65;
+}
+
+button[disabled][readonly] {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+.form-control[readonly] {
+  background: #fff;
+
+  &[disabled] {
+    background: #e9ecef;
+  }
+}
+

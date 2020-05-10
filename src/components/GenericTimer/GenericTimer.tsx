@@ -1,5 +1,6 @@
 import React  from 'react';
 import Timer from 'react-compound-timer';
+import FontProvider from 'components/FontProvider/FontProvider';
 import convertToMiliseconds from 'helpers/convertToMiliseconds/convertToMiliseconds';
 import addLeadingZeros from 'helpers/addLeadingZeros/addLeadingZeros';
 import {
@@ -129,7 +130,7 @@ const GenericTimer =
       textAlign: ta || 'center',
       fontFamily: ff ? ff : 'Arial',
       fontWeight: fw ? fw : 'normal',
-      fontSize: fz ? fz : 'medium',
+      fontSize: fz ? `${fz}px` : 'medium',
       fontStyle: fs ? fs : 'normal',
       letterSpacing: ls ? `${ls}px` : 'normal',
       paddingTop: pt ? `${pt}px` : 0,
@@ -161,43 +162,45 @@ const GenericTimer =
         {cs && (
           <link
             rel='stylesheet'
-            href={stylesheetUrl as string}
+            href={stylesheetUrl}
           />
         )}
-        <div
-          className='widgetWrapper'
-          style={wrapperStyles}
-        >
+        <FontProvider name={ff}>
           <div
-            className='genericTimer'
-            style={widgetStyles}
+            className='widgetWrapper'
+            style={wrapperStyles}
           >
-            <Timer
-              {...direction === 'backward' && { initialTime }}
-              lastUnit='h'
-              direction={direction}
-              formatValue={addLeadingZeros}
-              timeToUpdate={998.9}
-              ref={ref as TimerRef}
+            <div
+              className='genericTimer'
+              style={widgetStyles}
             >
-              {() => (
-                <>
-                  <span className='hours'>
-                    <Timer.Hours />
-                  </span>
-                  <span className='separator' />
-                  <span className='minutes'>
-                    <Timer.Minutes />
-                  </span>
-                  <span className='separator' />
-                  <span className='seconds'>
-                    <Timer.Seconds />
-                  </span>
-                </>
-              )}
-            </Timer>
+              <Timer
+                {...direction === 'backward' && { initialTime }}
+                lastUnit='h'
+                direction={direction}
+                formatValue={addLeadingZeros}
+                timeToUpdate={998.9}
+                ref={ref as TimerRef}
+              >
+                {() => (
+                  <>
+                    <span className='hours'>
+                      <Timer.Hours />
+                    </span>
+                    <span className='separator' />
+                    <span className='minutes'>
+                      <Timer.Minutes />
+                    </span>
+                    <span className='separator' />
+                    <span className='seconds'>
+                      <Timer.Seconds />
+                    </span>
+                  </>
+                )}
+              </Timer>
+            </div>
           </div>
-        </div>
+        </FontProvider>
       </>
     );
   });
