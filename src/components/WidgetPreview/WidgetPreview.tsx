@@ -1,18 +1,28 @@
 import React from 'react';
-import { ShorthandValues } from 'types';
+import CountdownTimerPreview from 'components/CountdownTimerPreview/CountdownTimerPreview';
+import StreamTimerPreview from 'components/StreamTimerPreview/StreamTimerPreview';
+import SocialMediaWidgetPreview from 'components/SocialMediaWidgetPreview/SocialMediaWidgetPreview';
+import LastFmRecentSongPreview from 'components/LastFmRecentSongPreview/LastFmRecentSongPreview';
+import { GenericWidget, WidgetAlias, ShorthandValues } from 'types';
 
-interface WidgetProps {
-  alias: string;
+interface WidgetPreviewProps {
+  alias: WidgetAlias;
   params: ShorthandValues;
 }
 
-const Widget = ({ alias, params }: WidgetProps) => (
-  <div style={{ overflow: 'hidden' }}>
-    <h2>Widget preview ({alias})</h2>
-    <div style={{ overflow: 'hidden' }}>
-      {JSON.stringify(params)}
-    </div>
-  </div>
-);
+type WidgetPreviewComponentList = {
+  [key in WidgetAlias]: GenericWidget;
+}
 
-export default Widget;
+const WidgetPreview = ({ alias, params }: WidgetPreviewProps) => {
+  const widgetPreviews = {
+    ct: <CountdownTimerPreview params={params} />,
+    st: <StreamTimerPreview params={params} />,
+    sm: <SocialMediaWidgetPreview params={params} />,
+    rs: <LastFmRecentSongPreview params={params} />,
+  } as WidgetPreviewComponentList;
+
+  return widgetPreviews[alias];
+};
+
+export default WidgetPreview;

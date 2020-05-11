@@ -2,7 +2,7 @@ import WidgetPreview from './WidgetPreview';
 import domRender from 'utils/domRender';
 
 const testParams = {
-  alias: 'test',
+  alias: 'st',
   params: {
     h: 1,
     m: 2,

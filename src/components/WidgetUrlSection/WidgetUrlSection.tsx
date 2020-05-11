@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button, InputGroup, FormControl } from 'react-bootstrap';
-// import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
-import { FaCopy } from 'react-icons/fa';
-import getWidgetUrl from 'helpers/getWidgetUrl/getWidgetUrl';
-import selectInputText from 'helpers/selectInputText/selectInputText';
+import classnames from 'classnames';
+import { Form, Row, Col } from 'react-bootstrap';
+import WidgetUrl from 'components/WidgetUrl/WidgetUrl';
 import { ShorthandValues } from 'types';
 
 interface WidgetUrlProps {
@@ -12,44 +10,28 @@ interface WidgetUrlProps {
   params: ShorthandValues;
 }
 
-const WidgetUrlSection = (props: WidgetUrlProps) => {
-  const { origin, alias, params } = props;
-  const widgetUrl = getWidgetUrl({ origin, alias, params });
-  const emptyParams = params && Object.keys(params).length <= 0;
+const cx = classnames;
 
-  return (
-    <div>
-      <h2>Widget URL</h2>
-      <div>
-        <InputGroup className='mb-3'>
-          <FormControl
-            {...emptyParams && {
-              disabled: true,
-              title: 'Configure widget first',
-            }}
-            readOnly
-            value={widgetUrl}
-            onFocus={selectInputText}
-            aria-label='Widget URL'
-          />
-          <InputGroup.Append>
-            <Button
-              {...emptyParams && {
-                disabled: true,
-                readOnly: true }}
-              title={emptyParams
-                ? 'Configure widget first'
-                : 'Copy widget URL'}
-              variant='outline-secondary'
-            >
-              <FaCopy />
-            </Button>
-          </InputGroup.Append>
-        </InputGroup>
-        {/* <WidgetUrl {...props} /> */}
-      </div>
-    </div>
-  );
-};
+const WidgetUrlSection = (props: WidgetUrlProps) => (
+  <Form.Group
+    as={Row}
+    className={cx('mb-0', 'mt-0', 'pt-0', 'pb-0')}
+  >
+    <Form.Label
+      column
+      xs={4}
+      sm={3}
+      className={cx('mb-0', 'text-right')}
+    >
+      Widget&nbsp;URL:
+    </Form.Label>
+    <Col
+      xs={8}
+      sm={9}
+    >
+      <WidgetUrl {...props}/>
+    </Col>
+  </Form.Group>
+);
 
 export default WidgetUrlSection;

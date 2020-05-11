@@ -1,5 +1,7 @@
-import { ReactElement } from 'react';
+import { ReactElement, MutableRefObject } from 'react';
+import Timer from 'react-compound-timer';
 
+export type TimerRef = MutableRefObject<Timer>;
 export type OnChangeFn = (e: ChangeEvent<HTMLInputElement>) => void;
 export type ParamType =
   'string'
@@ -43,6 +45,10 @@ export type BorderStyle =
   | 'outset'
   | 'none';
 
+export type WidgetListObject = {
+  [key in WidgetAlias]: GenericWidget;
+}
+
 export interface WidgetParam {
   type: ParamType;
   label: string;
@@ -72,4 +78,8 @@ export interface WidgetComponentProps {
   params: ShorthandValues;
 };
 
-export type WidgetComponent = ReactElement<ShorthandValues>;
+export interface GenericWidgetComponentProps extends WidgetComponentProps {
+  alias: WidgetAlias;
+};
+
+export type GenericWidget = ReactElement<ShorthandValues>;
